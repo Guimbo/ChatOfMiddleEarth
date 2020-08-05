@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		714118E2EB67DC8F021F0E98 /* Pods_ChatOfMiddleEarth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE5AB3A555F8A473766026A /* Pods_ChatOfMiddleEarth.framework */; };
 		EDD9978924DA1F1400B88B28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD9978824DA1F1400B88B28 /* AppDelegate.swift */; };
 		EDD9978B24DA1F1400B88B28 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD9978A24DA1F1400B88B28 /* SceneDelegate.swift */; };
 		EDD9978D24DA1F1400B88B28 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD9978C24DA1F1400B88B28 /* ViewController.swift */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1DE5AB3A555F8A473766026A /* Pods_ChatOfMiddleEarth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatOfMiddleEarth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D393D784A9163F42D3080E4E /* Pods-ChatOfMiddleEarth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatOfMiddleEarth.debug.xcconfig"; path = "Target Support Files/Pods-ChatOfMiddleEarth/Pods-ChatOfMiddleEarth.debug.xcconfig"; sourceTree = "<group>"; };
 		EDD9978524DA1F1400B88B28 /* ChatOfMiddleEarth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatOfMiddleEarth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDD9978824DA1F1400B88B28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDD9978A24DA1F1400B88B28 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		EDD9979124DA1F1900B88B28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDD9979424DA1F1900B88B28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDD9979624DA1F1900B88B28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDBBF43BFFCF23818D9314CB /* Pods-ChatOfMiddleEarth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatOfMiddleEarth.release.xcconfig"; path = "Target Support Files/Pods-ChatOfMiddleEarth/Pods-ChatOfMiddleEarth.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				714118E2EB67DC8F021F0E98 /* Pods_ChatOfMiddleEarth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		888C84616973B914405985BB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DE5AB3A555F8A473766026A /* Pods_ChatOfMiddleEarth.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8AF28F08DE1657BB02B91335 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D393D784A9163F42D3080E4E /* Pods-ChatOfMiddleEarth.debug.xcconfig */,
+				FDBBF43BFFCF23818D9314CB /* Pods-ChatOfMiddleEarth.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		EDD9977C24DA1F1400B88B28 = {
 			isa = PBXGroup;
 			children = (
 				EDD9978724DA1F1400B88B28 /* ChatOfMiddleEarth */,
 				EDD9978624DA1F1400B88B28 /* Products */,
+				8AF28F08DE1657BB02B91335 /* Pods */,
+				888C84616973B914405985BB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDD9979924DA1F1A00B88B28 /* Build configuration list for PBXNativeTarget "ChatOfMiddleEarth" */;
 			buildPhases = (
+				098F770ACBEA562729545478 /* [CP] Check Pods Manifest.lock */,
 				EDD9978124DA1F1400B88B28 /* Sources */,
 				EDD9978224DA1F1400B88B28 /* Frameworks */,
 				EDD9978324DA1F1400B88B28 /* Resources */,
+				E780CC768FC0D27A18B56A1D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		098F770ACBEA562729545478 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChatOfMiddleEarth-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E780CC768FC0D27A18B56A1D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChatOfMiddleEarth/Pods-ChatOfMiddleEarth-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChatOfMiddleEarth/Pods-ChatOfMiddleEarth-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChatOfMiddleEarth/Pods-ChatOfMiddleEarth-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EDD9978124DA1F1400B88B28 /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		EDD9979A24DA1F1A00B88B28 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D393D784A9163F42D3080E4E /* Pods-ChatOfMiddleEarth.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -302,6 +372,7 @@
 		};
 		EDD9979B24DA1F1A00B88B28 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDBBF43BFFCF23818D9314CB /* Pods-ChatOfMiddleEarth.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
