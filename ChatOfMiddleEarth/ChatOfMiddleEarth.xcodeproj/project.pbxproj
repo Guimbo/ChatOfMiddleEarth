@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -56,8 +56,62 @@
 				D393D784A9163F42D3080E4E /* Pods-ChatOfMiddleEarth.debug.xcconfig */,
 				FDBBF43BFFCF23818D9314CB /* Pods-ChatOfMiddleEarth.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		EDB5271C24DF63F000BE93C4 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				EDB5271D24DF63FB00BE93C4 /* Login */,
+				EDB5271E24DF646A00BE93C4 /* Fellowship */,
+				EDB5271F24DF648D00BE93C4 /* Chat */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		EDB5271D24DF63FB00BE93C4 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				EDB5272024DF64C700BE93C4 /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		EDB5271E24DF646A00BE93C4 /* Fellowship */ = {
+			isa = PBXGroup;
+			children = (
+				EDB5272124DF64D500BE93C4 /* View */,
+			);
+			path = Fellowship;
+			sourceTree = "<group>";
+		};
+		EDB5271F24DF648D00BE93C4 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				EDB5272224DF64DB00BE93C4 /* View */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		EDB5272024DF64C700BE93C4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EDB5272124DF64D500BE93C4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EDB5272224DF64DB00BE93C4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		EDD9977C24DA1F1400B88B28 = {
@@ -81,6 +135,7 @@
 		EDD9978724DA1F1400B88B28 /* ChatOfMiddleEarth */ = {
 			isa = PBXGroup;
 			children = (
+				EDB5271C24DF63F000BE93C4 /* Screens */,
 				EDD9978824DA1F1400B88B28 /* AppDelegate.swift */,
 				EDD9978A24DA1F1400B88B28 /* SceneDelegate.swift */,
 				EDD9978C24DA1F1400B88B28 /* ViewController.swift */,
