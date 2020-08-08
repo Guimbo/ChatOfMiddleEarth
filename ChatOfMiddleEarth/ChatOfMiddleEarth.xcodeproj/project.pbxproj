@@ -10,6 +10,8 @@
 		714118E2EB67DC8F021F0E98 /* Pods_ChatOfMiddleEarth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE5AB3A555F8A473766026A /* Pods_ChatOfMiddleEarth.framework */; };
 		EDB5272D24DF688000BE93C4 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDB5272C24DF688000BE93C4 /* LoginView.xib */; };
 		EDB5272F24DF690C00BE93C4 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB5272E24DF690C00BE93C4 /* LoginView.swift */; };
+		EDB5273124DF6DBC00BE93C4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB5273024DF6DBC00BE93C4 /* LoginViewController.swift */; };
+		EDB5273324DF6DD900BE93C4 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB5273224DF6DD900BE93C4 /* LoginPresenter.swift */; };
 		EDD9978924DA1F1400B88B28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD9978824DA1F1400B88B28 /* AppDelegate.swift */; };
 		EDD9978B24DA1F1400B88B28 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD9978A24DA1F1400B88B28 /* SceneDelegate.swift */; };
 		EDD9978D24DA1F1400B88B28 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD9978C24DA1F1400B88B28 /* ViewController.swift */; };
@@ -23,6 +25,8 @@
 		D393D784A9163F42D3080E4E /* Pods-ChatOfMiddleEarth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatOfMiddleEarth.debug.xcconfig"; path = "Target Support Files/Pods-ChatOfMiddleEarth/Pods-ChatOfMiddleEarth.debug.xcconfig"; sourceTree = "<group>"; };
 		EDB5272C24DF688000BE93C4 /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		EDB5272E24DF690C00BE93C4 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		EDB5273024DF6DBC00BE93C4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		EDB5273224DF6DD900BE93C4 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		EDD9978524DA1F1400B88B28 /* ChatOfMiddleEarth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatOfMiddleEarth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDD9978824DA1F1400B88B28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDD9978A24DA1F1400B88B28 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +81,8 @@
 			isa = PBXGroup;
 			children = (
 				EDB5272024DF64C700BE93C4 /* View */,
+				EDB5273024DF6DBC00BE93C4 /* LoginViewController.swift */,
+				EDB5273224DF6DD900BE93C4 /* LoginPresenter.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -269,9 +275,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDB5273324DF6DD900BE93C4 /* LoginPresenter.swift in Sources */,
 				EDD9978D24DA1F1400B88B28 /* ViewController.swift in Sources */,
 				EDD9978924DA1F1400B88B28 /* AppDelegate.swift in Sources */,
 				EDB5272F24DF690C00BE93C4 /* LoginView.swift in Sources */,
+				EDB5273124DF6DBC00BE93C4 /* LoginViewController.swift in Sources */,
 				EDD9978B24DA1F1400B88B28 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
