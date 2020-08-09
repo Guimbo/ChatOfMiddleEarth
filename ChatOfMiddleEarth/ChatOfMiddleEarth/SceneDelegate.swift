@@ -22,8 +22,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         IQKeyboardManager.shared.enable = true
         
         let navigation = UINavigationController()
-        let sceneFactory = ViewControllersFactoryImplementation()
-        let mainCoordinator = MainCoordinator(navigationController: navigation, sceneFactory: sceneFactory)
+        let scenePresenterFactory = PresenterFactoryImplementation()
+        let sceneMainFactory = ViewControllersFactoryImplementation(presenterFactory: scenePresenterFactory)
+        let mainCoordinator = MainCoordinator(navigationController: navigation, sceneFactory: sceneMainFactory)
         self.window?.makeKeyAndVisible()
         self.window?.windowScene = windowScene
         self.window?.rootViewController = mainCoordinator.navigationController

@@ -15,10 +15,14 @@ protocol ViewControllersFactory: AnyObject {
 
 class ViewControllersFactoryImplementation: ViewControllersFactory {
     
+    let presenterFactory:PresenterFactory
+    
+    init(presenterFactory: PresenterFactory) {
+        self.presenterFactory = presenterFactory
+    }
+
     func makeLoginViewController(withCoordinator coordinator: MainCoordinator) -> LoginViewController {
-        let presenter = LoginPresenter(coordinator: <#T##LoginCoordinating#>,
-                                       loginUseCase: <#T##LoginUseCaseProtocol#>,
-                                       joinChatFormUseCase: <#T##JoinChatUseCaseFormProtocol#>)
+        let presenter = presenterFactory.makeLoginPresenter(withCoordinator: coordinator)
         let loginVC = LoginViewController(presenter: presenter)
 
         return loginVC

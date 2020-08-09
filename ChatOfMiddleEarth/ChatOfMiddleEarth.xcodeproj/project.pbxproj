@@ -167,8 +167,8 @@
 		EDB5273E24DF75C800BE93C4 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
-				EDB5274124DF760B00BE93C4 /* ViewControllersFactory.swift */,
 				ED757F0C24E0B09000608E29 /* PresenterFactory.swift */,
+				EDB5274124DF760B00BE93C4 /* ViewControllersFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
