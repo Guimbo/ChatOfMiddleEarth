@@ -14,6 +14,7 @@
 		EDB5273324DF6DD900BE93C4 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB5273224DF6DD900BE93C4 /* LoginPresenter.swift */; };
 		EDB5273624DF6FF700BE93C4 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB5273524DF6FF700BE93C4 /* Coordinator.swift */; };
 		EDB5273824DF701200BE93C4 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB5273724DF701200BE93C4 /* MainCoordinator.swift */; };
+		EDB5274224DF760B00BE93C4 /* ViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB5274124DF760B00BE93C4 /* ViewControllersFactory.swift */; };
 		EDD9978924DA1F1400B88B28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD9978824DA1F1400B88B28 /* AppDelegate.swift */; };
 		EDD9978B24DA1F1400B88B28 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD9978A24DA1F1400B88B28 /* SceneDelegate.swift */; };
 		EDD9978D24DA1F1400B88B28 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD9978C24DA1F1400B88B28 /* ViewController.swift */; };
@@ -31,6 +32,7 @@
 		EDB5273224DF6DD900BE93C4 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		EDB5273524DF6FF700BE93C4 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		EDB5273724DF701200BE93C4 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		EDB5274124DF760B00BE93C4 /* ViewControllersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllersFactory.swift; sourceTree = "<group>"; };
 		EDD9978524DA1F1400B88B28 /* ChatOfMiddleEarth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatOfMiddleEarth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDD9978824DA1F1400B88B28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDD9978A24DA1F1400B88B28 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +141,14 @@
 			path = Coordinators;
 			sourceTree = "<group>";
 		};
+		EDB5273E24DF75C800BE93C4 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				EDB5274124DF760B00BE93C4 /* ViewControllersFactory.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
 		EDD9977C24DA1F1400B88B28 = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +170,7 @@
 		EDD9978724DA1F1400B88B28 /* ChatOfMiddleEarth */ = {
 			isa = PBXGroup;
 			children = (
+				EDB5273E24DF75C800BE93C4 /* Factories */,
 				EDB5273424DF6FA300BE93C4 /* Coordinators */,
 				EDB5271C24DF63F000BE93C4 /* Screens */,
 				EDD9978824DA1F1400B88B28 /* AppDelegate.swift */,
@@ -290,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDB5273324DF6DD900BE93C4 /* LoginPresenter.swift in Sources */,
+				EDB5274224DF760B00BE93C4 /* ViewControllersFactory.swift in Sources */,
 				EDB5273824DF701200BE93C4 /* MainCoordinator.swift in Sources */,
 				EDD9978D24DA1F1400B88B28 /* ViewController.swift in Sources */,
 				EDD9978924DA1F1400B88B28 /* AppDelegate.swift in Sources */,
