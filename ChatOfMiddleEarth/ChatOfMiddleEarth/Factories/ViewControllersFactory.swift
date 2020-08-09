@@ -14,7 +14,11 @@ protocol ViewControllersFactory {
 
 class ViewControllersFactoryImplementation: ViewControllersFactory {
     
-    let coordinator = MainCoordinator()
+    let coordinator: MainCoordinator
+    
+    init(coordinator: MainCoordinator) {
+        self.coordinator = coordinator
+    }
     
     func makeLoginViewController() -> LoginViewController {
         let presenter = LoginPresenter(coordinator: coordinator)
