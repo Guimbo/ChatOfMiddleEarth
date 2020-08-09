@@ -17,8 +17,6 @@
 		EDB5274224DF760B00BE93C4 /* ViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB5274124DF760B00BE93C4 /* ViewControllersFactory.swift */; };
 		EDD9978924DA1F1400B88B28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD9978824DA1F1400B88B28 /* AppDelegate.swift */; };
 		EDD9978B24DA1F1400B88B28 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD9978A24DA1F1400B88B28 /* SceneDelegate.swift */; };
-		EDD9978D24DA1F1400B88B28 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD9978C24DA1F1400B88B28 /* ViewController.swift */; };
-		EDD9979024DA1F1400B88B28 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDD9978E24DA1F1400B88B28 /* Main.storyboard */; };
 		EDD9979224DA1F1900B88B28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDD9979124DA1F1900B88B28 /* Assets.xcassets */; };
 		EDD9979524DA1F1900B88B28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDD9979324DA1F1900B88B28 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -36,8 +34,6 @@
 		EDD9978524DA1F1400B88B28 /* ChatOfMiddleEarth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatOfMiddleEarth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDD9978824DA1F1400B88B28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDD9978A24DA1F1400B88B28 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EDD9978C24DA1F1400B88B28 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EDD9978F24DA1F1400B88B28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EDD9979124DA1F1900B88B28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDD9979424DA1F1900B88B28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDD9979624DA1F1900B88B28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -170,13 +166,11 @@
 		EDD9978724DA1F1400B88B28 /* ChatOfMiddleEarth */ = {
 			isa = PBXGroup;
 			children = (
+				EDD9978824DA1F1400B88B28 /* AppDelegate.swift */,
+				EDD9978A24DA1F1400B88B28 /* SceneDelegate.swift */,
 				EDB5273E24DF75C800BE93C4 /* Factories */,
 				EDB5273424DF6FA300BE93C4 /* Coordinators */,
 				EDB5271C24DF63F000BE93C4 /* Screens */,
-				EDD9978824DA1F1400B88B28 /* AppDelegate.swift */,
-				EDD9978A24DA1F1400B88B28 /* SceneDelegate.swift */,
-				EDD9978C24DA1F1400B88B28 /* ViewController.swift */,
-				EDD9978E24DA1F1400B88B28 /* Main.storyboard */,
 				EDD9979124DA1F1900B88B28 /* Assets.xcassets */,
 				EDD9979324DA1F1900B88B28 /* LaunchScreen.storyboard */,
 				EDD9979624DA1F1900B88B28 /* Info.plist */,
@@ -247,7 +241,6 @@
 				EDD9979524DA1F1900B88B28 /* LaunchScreen.storyboard in Resources */,
 				EDD9979224DA1F1900B88B28 /* Assets.xcassets in Resources */,
 				EDB5272D24DF688000BE93C4 /* LoginView.xib in Resources */,
-				EDD9979024DA1F1400B88B28 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,7 +296,6 @@
 				EDB5273324DF6DD900BE93C4 /* LoginPresenter.swift in Sources */,
 				EDB5274224DF760B00BE93C4 /* ViewControllersFactory.swift in Sources */,
 				EDB5273824DF701200BE93C4 /* MainCoordinator.swift in Sources */,
-				EDD9978D24DA1F1400B88B28 /* ViewController.swift in Sources */,
 				EDD9978924DA1F1400B88B28 /* AppDelegate.swift in Sources */,
 				EDB5272F24DF690C00BE93C4 /* LoginView.swift in Sources */,
 				EDB5273124DF6DBC00BE93C4 /* LoginViewController.swift in Sources */,
@@ -315,14 +307,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EDD9978E24DA1F1400B88B28 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EDD9978F24DA1F1400B88B28 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EDD9979324DA1F1900B88B28 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -457,6 +441,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 86RABURUKS;
 				INFOPLIST_FILE = ChatOfMiddleEarth/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -478,6 +463,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 86RABURUKS;
 				INFOPLIST_FILE = ChatOfMiddleEarth/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
