@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol ViewControllersFactory {
+protocol ViewControllersFactory: AnyObject {
     func makeLoginViewController(withCoordinator coordinator: MainCoordinator) -> LoginViewController
 }
 

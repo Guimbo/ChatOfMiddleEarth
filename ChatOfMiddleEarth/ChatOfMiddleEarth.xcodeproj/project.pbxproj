@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		714118E2EB67DC8F021F0E98 /* Pods_ChatOfMiddleEarth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE5AB3A555F8A473766026A /* Pods_ChatOfMiddleEarth.framework */; };
+		ED50F56124E04E2E00A6514A /* Socket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED50F56024E04E2E00A6514A /* Socket.framework */; };
+		ED50F56224E04E2E00A6514A /* Socket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED50F56024E04E2E00A6514A /* Socket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EDB5272D24DF688000BE93C4 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDB5272C24DF688000BE93C4 /* LoginView.xib */; };
 		EDB5272F24DF690C00BE93C4 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB5272E24DF690C00BE93C4 /* LoginView.swift */; };
 		EDB5273124DF6DBC00BE93C4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB5273024DF6DBC00BE93C4 /* LoginViewController.swift */; };
@@ -31,6 +33,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				EDBC48E524DFB3BE00E26BA1 /* Domain.framework in Embed Frameworks */,
+				ED50F56224E04E2E00A6514A /* Socket.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -40,6 +43,7 @@
 /* Begin PBXFileReference section */
 		1DE5AB3A555F8A473766026A /* Pods_ChatOfMiddleEarth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatOfMiddleEarth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D393D784A9163F42D3080E4E /* Pods-ChatOfMiddleEarth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatOfMiddleEarth.debug.xcconfig"; path = "Target Support Files/Pods-ChatOfMiddleEarth/Pods-ChatOfMiddleEarth.debug.xcconfig"; sourceTree = "<group>"; };
+		ED50F56024E04E2E00A6514A /* Socket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Socket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDB5272C24DF688000BE93C4 /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		EDB5272E24DF690C00BE93C4 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		EDB5273024DF6DBC00BE93C4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED50F56124E04E2E00A6514A /* Socket.framework in Frameworks */,
 				EDBC48E424DFB3BE00E26BA1 /* Domain.framework in Frameworks */,
 				714118E2EB67DC8F021F0E98 /* Pods_ChatOfMiddleEarth.framework in Frameworks */,
 			);
@@ -73,6 +78,7 @@
 		888C84616973B914405985BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ED50F56024E04E2E00A6514A /* Socket.framework */,
 				EDBC48E324DFB3BE00E26BA1 /* Domain.framework */,
 				1DE5AB3A555F8A473766026A /* Pods_ChatOfMiddleEarth.framework */,
 			);

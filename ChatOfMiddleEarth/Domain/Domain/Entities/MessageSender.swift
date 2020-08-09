@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum MessageSender {
+public enum MessageSender {
   case ourself
   case someoneElse
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol ChatRoomInterface {
+public protocol ChatRoomInterface {
     
     func setupNetworkCommunication()
     func joinChat(username:String)
