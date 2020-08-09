@@ -1,5 +1,5 @@
 //
-//  JoinChatUseCaseError.swift
+//  JoinChatUseCaseFormError.swift
 //  Domain
 //
 //  Created by Guilherme Araujo on 09/08/20.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum JoinChatUseCaseError: Error {
+public enum JoinChatUseCaseFormError: Error {
     
     public enum UserName: Error {
         case empty
