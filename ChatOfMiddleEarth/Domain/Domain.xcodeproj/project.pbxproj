@@ -71,8 +71,8 @@
 		EDBC48E724DFB40700E26BA1 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				EDBC48EB24DFB54500E26BA1 /* Message.swift */,
 				EDBC48ED24DFB54E00E26BA1 /* MessageSender.swift */,
+				EDBC48EB24DFB54500E26BA1 /* Message.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
