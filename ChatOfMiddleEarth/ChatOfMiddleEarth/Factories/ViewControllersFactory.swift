@@ -7,7 +7,8 @@
 //
 
 import Foundation
-
+import Socket
+import Domain
 protocol ViewControllersFactory: AnyObject {
     func makeLoginViewController(withCoordinator coordinator: MainCoordinator) -> LoginViewController
 }
@@ -15,7 +16,9 @@ protocol ViewControllersFactory: AnyObject {
 class ViewControllersFactoryImplementation: ViewControllersFactory {
     
     func makeLoginViewController(withCoordinator coordinator: MainCoordinator) -> LoginViewController {
-        let presenter = LoginPresenter(coordinator: coordinator)
+        let presenter = LoginPresenter(coordinator: <#T##LoginCoordinating#>,
+                                       loginUseCase: <#T##LoginUseCaseProtocol#>,
+                                       joinChatFormUseCase: <#T##JoinChatUseCaseFormProtocol#>)
         let loginVC = LoginViewController(presenter: presenter)
 
         return loginVC

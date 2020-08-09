@@ -9,12 +9,12 @@
 import Foundation
 import Domain
 
-protocol ChatRoomDelegate: class {
+public protocol ChatRoomDelegate: class {
     func received(message: Message)
 }
 
 
-class ChatRoom: NSObject {
+public class ChatRoom: NSObject {
     
     //properties
     private var inputStream: InputStream!
@@ -24,15 +24,15 @@ class ChatRoom: NSObject {
     private var portnumber: UInt32?
     private let maxReadLength = 4096
     
-    required init(delegate: ChatRoomDelegate) {
+    public func attachDelegate(delegate: ChatRoomDelegate) {
         self.delegate = delegate
-        
     }
+    
 }
 
 extension ChatRoom: ChatRoomInterface {
     
-    func setupNetworkCommunication(inPort portnumber: UInt32) {
+    public func setupNetworkCommunication(inPort portnumber: UInt32) {
         
         //0 - Atualiza numero da porta
         self.portnumber = portnumber
@@ -63,7 +63,7 @@ extension ChatRoom: ChatRoomInterface {
         outputStream.open()
     }
     
-    func joinChat(username: String) {
+    public func joinChat(username: String) {
         //Contrói a mensagem com um chat room protocol
         let data = "iam:\(username)".data(using: .utf8)!
         
@@ -81,7 +81,7 @@ extension ChatRoom: ChatRoomInterface {
         }
     }
     
-    func send(message: String) {
+    public func send(message: String) {
         let data = "msg:\(message)".data(using: .utf8)!
         
         _ = data.withUnsafeBytes{
@@ -94,7 +94,7 @@ extension ChatRoom: ChatRoomInterface {
         }
     }
     
-    func stopChatSession() {
+    public func stopChatSession() {
         inputStream.close()
         outputStream.close()
     }
@@ -105,7 +105,7 @@ extension ChatRoom: ChatRoomInterface {
 extension ChatRoom: StreamDelegate {
 
     //Verificar mensagem recebida
-    internal func stream(_ aStream: Stream, handle eventCode: Stream.Event) {
+    public func stream(_ aStream: Stream, handle eventCode: Stream.Event) {
        switch eventCode {
        case .hasBytesAvailable:
          print("New message received")
