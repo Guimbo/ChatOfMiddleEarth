@@ -10,6 +10,6 @@ import Foundation
 
 public protocol JoinChatRepositoryProtocol: AnyObject {
     func registerUserInServer(usingUserName username: String,
-                              andPortNumber: UInt32,
-                              andCompletion: (Result<Void, Error>) -> Void)
+                              andPortNumber portNumber: UInt32,
+                              andCompletion completion: (Result<Void, Error>) -> Void)
 }

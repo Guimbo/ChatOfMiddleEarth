@@ -10,7 +10,7 @@ import Foundation
 
 public protocol ChatRoomInterface {
     
-    func setupNetworkCommunication()
+    func setupNetworkCommunication(inPort portnumber: UInt32)
     func joinChat(username:String)
     func send(message: String)
     func stopChatSession()

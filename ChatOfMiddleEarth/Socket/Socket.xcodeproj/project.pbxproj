@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED757F0B24E0706100608E29 /* JoinChatRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED757F0A24E0706100608E29 /* JoinChatRepository.swift */; };
 		EDBC490024DFB8ED00E26BA1 /* Socket.h in Headers */ = {isa = PBXBuildFile; fileRef = EDBC48FE24DFB8ED00E26BA1 /* Socket.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EDBC490724DFB90900E26BA1 /* ChatRoomInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBC490624DFB90900E26BA1 /* ChatRoomInterface.swift */; };
 		EDBC490924DFB93600E26BA1 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBC490824DFB93600E26BA1 /* ChatRoom.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		ED757F0A24E0706100608E29 /* JoinChatRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinChatRepository.swift; sourceTree = "<group>"; };
 		EDBC48FB24DFB8ED00E26BA1 /* Socket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Socket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDBC48FE24DFB8ED00E26BA1 /* Socket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Socket.h; sourceTree = "<group>"; };
 		EDBC48FF24DFB8ED00E26BA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,6 +52,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED757F0624E0701300608E29 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				ED757F0A24E0706100608E29 /* JoinChatRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		ED757F0724E0702800608E29 /* Data Source */ = {
+			isa = PBXGroup;
+			children = (
+				EDBC490624DFB90900E26BA1 /* ChatRoomInterface.swift */,
+				EDBC490824DFB93600E26BA1 /* ChatRoom.swift */,
+			);
+			path = "Data Source";
+			sourceTree = "<group>";
+		};
 		EDBC48F124DFB8ED00E26BA1 = {
 			isa = PBXGroup;
 			children = (
@@ -70,8 +89,8 @@
 		EDBC48FD24DFB8ED00E26BA1 /* Socket */ = {
 			isa = PBXGroup;
 			children = (
-				EDBC490624DFB90900E26BA1 /* ChatRoomInterface.swift */,
-				EDBC490824DFB93600E26BA1 /* ChatRoom.swift */,
+				ED757F0724E0702800608E29 /* Data Source */,
+				ED757F0624E0701300608E29 /* Repository */,
 				EDBC48FE24DFB8ED00E26BA1 /* Socket.h */,
 				EDBC48FF24DFB8ED00E26BA1 /* Info.plist */,
 			);
@@ -168,6 +187,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED757F0B24E0706100608E29 /* JoinChatRepository.swift in Sources */,
 				EDBC490924DFB93600E26BA1 /* ChatRoom.swift in Sources */,
 				EDBC490724DFB90900E26BA1 /* ChatRoomInterface.swift in Sources */,
 			);

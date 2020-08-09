@@ -20,22 +20,22 @@ class ChatRoom: NSObject {
     private var inputStream: InputStream!
     private var outputStream: OutputStream!
     weak var delegate: ChatRoomDelegate?
-    private var username: String
-    private var portnumber: UInt32
+    private var username: String?
+    private var portnumber: UInt32?
     private let maxReadLength = 4096
     
-    required init(username: String, portnumber: UInt32, delegate: ChatRoomDelegate) {
+    required init(delegate: ChatRoomDelegate) {
         self.delegate = delegate
-        self.username = username
-        self.portnumber = portnumber
         
     }
 }
 
 extension ChatRoom: ChatRoomInterface {
     
-    func setupNetworkCommunication() {
+    func setupNetworkCommunication(inPort portnumber: UInt32) {
         
+        //0 - Atualiza numero da porta
+        self.portnumber = portnumber
         //1 - Configura fluxos de socket não inicializados sem gerenciamento automático de memória
         var readStream: Unmanaged<CFReadStream>?
         var writeStream: Unmanaged<CFWriteStream>?
@@ -105,7 +105,7 @@ extension ChatRoom: ChatRoomInterface {
 extension ChatRoom: StreamDelegate {
 
     //Verificar mensagem recebida
-     func stream(_ aStream: Stream, handle eventCode: Stream.Event) {
+    internal func stream(_ aStream: Stream, handle eventCode: Stream.Event) {
        switch eventCode {
        case .hasBytesAvailable:
          print("New message received")
