@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED50F56424E0616300A6514A /* JoinChatUseCaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED50F56324E0616300A6514A /* JoinChatUseCaseError.swift */; };
 		EDBC48DC24DFB37100E26BA1 /* Domain.h in Headers */ = {isa = PBXBuildFile; fileRef = EDBC48DA24DFB37100E26BA1 /* Domain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EDBC48EA24DFB4C300E26BA1 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBC48E924DFB4C300E26BA1 /* StringExtension.swift */; };
 		EDBC48EC24DFB54500E26BA1 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBC48EB24DFB54500E26BA1 /* Message.swift */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ED50F56324E0616300A6514A /* JoinChatUseCaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinChatUseCaseError.swift; sourceTree = "<group>"; };
 		EDBC48D724DFB37100E26BA1 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDBC48DA24DFB37100E26BA1 /* Domain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
 		EDBC48DB24DFB37100E26BA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,9 +56,9 @@
 		EDBC48D924DFB37100E26BA1 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				EDBC48E824DFB4AE00E26BA1 /* Extensions */,
-				EDBC48E724DFB40700E26BA1 /* Entities */,
 				EDBC48E224DFB38900E26BA1 /* UseCases */,
+				EDBC48E724DFB40700E26BA1 /* Entities */,
+				EDBC48E824DFB4AE00E26BA1 /* Extensions */,
 				EDBC48DA24DFB37100E26BA1 /* Domain.h */,
 				EDBC48DB24DFB37100E26BA1 /* Info.plist */,
 			);
@@ -67,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				EDBC48EF24DFB68B00E26BA1 /* JoinChatUseCase.swift */,
+				ED50F56324E0616300A6514A /* JoinChatUseCaseError.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 				EDBC48F024DFB68B00E26BA1 /* JoinChatUseCase.swift in Sources */,
 				EDBC48EE24DFB54E00E26BA1 /* MessageSender.swift in Sources */,
 				EDBC48EC24DFB54500E26BA1 /* Message.swift in Sources */,
+				ED50F56424E0616300A6514A /* JoinChatUseCaseError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
