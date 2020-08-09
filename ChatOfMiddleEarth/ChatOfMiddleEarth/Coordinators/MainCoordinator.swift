@@ -26,8 +26,8 @@ final class MainCoordinator: Coordinator {
         openLoginScreen()
     }
 
-    func openLoginScreen() {
-        let loginView = sceneFactory.makeLoginViewController()
+    private func openLoginScreen() {
+        let loginView = sceneFactory.makeLoginViewController(withCoordinator: self)
         navigationController.pushViewController(loginView, animated: true)
     }
 }

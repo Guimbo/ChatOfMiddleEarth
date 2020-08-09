@@ -9,18 +9,12 @@
 import Foundation
 
 protocol ViewControllersFactory {
-    func makeLoginViewController() -> LoginViewController
+    func makeLoginViewController(withCoordinator coordinator: MainCoordinator) -> LoginViewController
 }
 
 class ViewControllersFactoryImplementation: ViewControllersFactory {
     
-    let coordinator: MainCoordinator
-    
-    init(coordinator: MainCoordinator) {
-        self.coordinator = coordinator
-    }
-    
-    func makeLoginViewController() -> LoginViewController {
+    func makeLoginViewController(withCoordinator coordinator: MainCoordinator) -> LoginViewController {
         let presenter = LoginPresenter(coordinator: coordinator)
         let loginVC = LoginViewController(presenter: presenter)
 
