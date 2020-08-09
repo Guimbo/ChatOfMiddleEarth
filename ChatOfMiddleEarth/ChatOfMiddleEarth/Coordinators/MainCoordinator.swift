@@ -34,7 +34,7 @@ final class MainCoordinator: Coordinator {
 
 // MARK: - Login Delegate
 extension MainCoordinator: LoginCoordinating {
-    func showChatScreen() {
-        openLoginScreen()
+    func showChatScreen(withUser username: String, and portNumber: String) {
+        #warning("remember: add chat screen")
     }
 }

@@ -9,7 +9,7 @@
 import Foundation
 
 protocol LoginCoordinating {
-    func showChatScreen()
+    func showChatScreen(withUser username: String, and portNumber: String)
 }
 
 class LoginPresenter {
