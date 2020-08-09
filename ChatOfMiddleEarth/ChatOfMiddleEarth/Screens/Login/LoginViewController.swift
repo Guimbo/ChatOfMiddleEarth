@@ -10,7 +10,7 @@ import UIKit
 
 protocol LoginViewPresenting {
     
-    func joinInChat()
+    func joinInChat(withUser user: String, andPort port: String)
 }
 
 class LoginViewController: UIViewController {
@@ -39,8 +39,15 @@ class LoginViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
+        loginView.delegate = self
         self.view = loginView
     }
 
 
+}
+
+extension LoginViewController: LoginViewDelegate {
+    func doLogin(withUser user: String, andPort port: String) {
+        presenter?.joinInChat(withUser: user, andPort: port)
+    }
 }

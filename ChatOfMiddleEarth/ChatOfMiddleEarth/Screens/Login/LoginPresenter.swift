@@ -21,7 +21,8 @@ class LoginPresenter {
 }
 
 extension LoginPresenter: LoginViewPresenting {
-    func joinInChat() {
-        coordinator?.showChatScreen()
+    func joinInChat(withUser user: String, andPort port: String) {
+        print(user, port)
     }
+
 }
