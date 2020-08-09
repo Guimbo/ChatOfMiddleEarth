@@ -7,3 +7,21 @@
 //
 
 import Foundation
+
+protocol LoginCoordinating {
+    func showChatScreen()
+}
+
+class LoginPresenter {
+    private var coordinator: LoginCoordinating?
+    
+    required init(coordinator: LoginCoordinating) {
+        self.coordinator = coordinator
+    }
+}
+
+extension LoginPresenter: LoginViewPresenting {
+    func joinInChat() {
+        coordinator?.showChatScreen()
+    }
+}

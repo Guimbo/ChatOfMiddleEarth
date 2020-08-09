@@ -24,10 +24,8 @@ final class MainCoordinator: Coordinator {
 }
 
 // MARK: - Login Delegate
-extension MainCoordinator: LoginCoordinatorDelegate {
-    func openHomeFromLogin(_ coordinator: LoginCoordinator) {
-        removeChildCoordinator(coordinator)
-        openHomeScreen()
+extension MainCoordinator: LoginCoordinating {
+    func showChatScreen() {
+        openLoginScreen()
     }
-
 }
