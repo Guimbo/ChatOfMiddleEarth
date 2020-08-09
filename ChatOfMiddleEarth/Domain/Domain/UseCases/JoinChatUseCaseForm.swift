@@ -8,11 +8,6 @@
 
 import Foundation
 
-// Instanciar um chat Shared
-// passar para a proxima view o nome e para o chatRoom o port number em UInt32
-// tentará dá um join chat, se não conseguir mostra warning
-// se conseguir abre next tela
-
 public protocol JoinChatUseCaseFormProtocol {
     func execute(withUser username: String,
                  andPortNumber portnumber: String,
