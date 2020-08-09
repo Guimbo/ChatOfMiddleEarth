@@ -15,11 +15,27 @@
 		EDB5273624DF6FF700BE93C4 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB5273524DF6FF700BE93C4 /* Coordinator.swift */; };
 		EDB5273824DF701200BE93C4 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB5273724DF701200BE93C4 /* MainCoordinator.swift */; };
 		EDB5274224DF760B00BE93C4 /* ViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB5274124DF760B00BE93C4 /* ViewControllersFactory.swift */; };
+		EDBC48E424DFB3BE00E26BA1 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDBC48E324DFB3BE00E26BA1 /* Domain.framework */; };
+		EDBC48E524DFB3BE00E26BA1 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EDBC48E324DFB3BE00E26BA1 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EDD9978924DA1F1400B88B28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD9978824DA1F1400B88B28 /* AppDelegate.swift */; };
 		EDD9978B24DA1F1400B88B28 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD9978A24DA1F1400B88B28 /* SceneDelegate.swift */; };
 		EDD9979224DA1F1900B88B28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDD9979124DA1F1900B88B28 /* Assets.xcassets */; };
 		EDD9979524DA1F1900B88B28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDD9979324DA1F1900B88B28 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EDBC48E624DFB3BE00E26BA1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EDBC48E524DFB3BE00E26BA1 /* Domain.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1DE5AB3A555F8A473766026A /* Pods_ChatOfMiddleEarth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatOfMiddleEarth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -31,6 +47,7 @@
 		EDB5273524DF6FF700BE93C4 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		EDB5273724DF701200BE93C4 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		EDB5274124DF760B00BE93C4 /* ViewControllersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllersFactory.swift; sourceTree = "<group>"; };
+		EDBC48E324DFB3BE00E26BA1 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDD9978524DA1F1400B88B28 /* ChatOfMiddleEarth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatOfMiddleEarth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDD9978824DA1F1400B88B28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDD9978A24DA1F1400B88B28 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDBC48E424DFB3BE00E26BA1 /* Domain.framework in Frameworks */,
 				714118E2EB67DC8F021F0E98 /* Pods_ChatOfMiddleEarth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -55,6 +73,7 @@
 		888C84616973B914405985BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EDBC48E324DFB3BE00E26BA1 /* Domain.framework */,
 				1DE5AB3A555F8A473766026A /* Pods_ChatOfMiddleEarth.framework */,
 			);
 			name = Frameworks;
@@ -190,6 +209,7 @@
 				EDD9978224DA1F1400B88B28 /* Frameworks */,
 				EDD9978324DA1F1400B88B28 /* Resources */,
 				E780CC768FC0D27A18B56A1D /* [CP] Embed Pods Frameworks */,
+				EDBC48E624DFB3BE00E26BA1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -450,7 +470,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -472,7 +492,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
