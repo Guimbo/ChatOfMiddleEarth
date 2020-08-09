@@ -18,51 +18,85 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="TKN-DI-NcN">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="TKN-DI-NcN">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                 </imageView>
-                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="We8-dd-e3O">
-                    <rect key="frame" x="87" y="390" width="241" height="34"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VrR-WW-1Cd">
+                    <rect key="frame" x="84.666666666666686" y="285" width="245" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="245" id="09e-ot-ZoL"/>
+                        <constraint firstAttribute="height" constant="35" id="YRO-Xz-QHQ"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VrR-WW-1Cd">
-                    <rect key="frame" x="87" y="297" width="241" height="34"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="theme" translatesAutoresizingMaskIntoConstraints="NO" id="aLd-C1-3j2">
+                    <rect key="frame" x="20" y="20" width="250" height="160"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="160" id="5JU-m9-2lv"/>
+                        <constraint firstAttribute="width" constant="250" id="JZz-cA-ie8"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="username" translatesAutoresizingMaskIntoConstraints="NO" id="I03-id-Mxy">
+                    <rect key="frame" x="114.66666666666669" y="250" width="185" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="185" id="KGS-Yg-UP1"/>
+                        <constraint firstAttribute="height" constant="35" id="oc6-1Q-EWV"/>
+                    </constraints>
+                </imageView>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="We8-dd-e3O">
+                    <rect key="frame" x="84.666666666666686" y="380" width="245" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="AdD-vA-EOk"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="245" id="NVk-r3-IV3"/>
+                        <constraint firstAttribute="width" constant="245" id="gIN-sG-hbs"/>
+                        <constraint firstAttribute="height" constant="35" id="kMk-OO-1UQ"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="theme" translatesAutoresizingMaskIntoConstraints="NO" id="aLd-C1-3j2">
-                    <rect key="frame" x="20" y="20" width="280" height="153"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="username" translatesAutoresizingMaskIntoConstraints="NO" id="I03-id-Mxy">
-                    <rect key="frame" x="116" y="263" width="182" height="34"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="portnumber" translatesAutoresizingMaskIntoConstraints="NO" id="CMv-VZ-RFA">
-                    <rect key="frame" x="88" y="357" width="240" height="36"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VH8-DN-DHm">
-                    <rect key="frame" x="151" y="601" width="108" height="98"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VH8-DN-DHm">
+                    <rect key="frame" x="164" y="601" width="86" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="9jc-80-JsO"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
                     <state key="normal" title="Join">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                 </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="portnumber" translatesAutoresizingMaskIntoConstraints="NO" id="CMv-VZ-RFA">
+                    <rect key="frame" x="84.666666666666686" y="345" width="245" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="CIq-QL-jCx"/>
+                        <constraint firstAttribute="width" constant="245" id="iGg-MZ-Au3"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="TKN-DI-NcN" secondAttribute="trailing" id="U4o-mR-Tmy"/>
-                <constraint firstItem="TKN-DI-NcN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="U60-z0-vNN"/>
-                <constraint firstItem="TKN-DI-NcN" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="p7y-v8-8Sb"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="TKN-DI-NcN" secondAttribute="bottom" id="sem-Gw-0oa"/>
+                <constraint firstItem="CMv-VZ-RFA" firstAttribute="top" secondItem="VrR-WW-1Cd" secondAttribute="bottom" constant="25" id="8YI-z4-nSV"/>
+                <constraint firstItem="We8-dd-e3O" firstAttribute="centerX" secondItem="I03-id-Mxy" secondAttribute="centerX" id="9y9-dO-pir"/>
+                <constraint firstItem="We8-dd-e3O" firstAttribute="top" secondItem="CMv-VZ-RFA" secondAttribute="bottom" id="Cwk-Wa-soh"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="VH8-DN-DHm" secondAttribute="trailing" constant="164" id="F8V-4K-2p3"/>
+                <constraint firstItem="CMv-VZ-RFA" firstAttribute="centerX" secondItem="I03-id-Mxy" secondAttribute="centerX" id="Ll3-pw-cgV"/>
+                <constraint firstItem="aLd-C1-3j2" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="Lsw-bE-NJp"/>
+                <constraint firstAttribute="bottom" secondItem="VH8-DN-DHm" secondAttribute="bottom" constant="35" id="Ny8-Tm-1gC"/>
+                <constraint firstItem="TKN-DI-NcN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="SMd-Gt-IQn"/>
+                <constraint firstItem="TKN-DI-NcN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="XSI-LG-lWu"/>
+                <constraint firstItem="We8-dd-e3O" firstAttribute="top" secondItem="CMv-VZ-RFA" secondAttribute="bottom" id="YpT-bF-bs8"/>
+                <constraint firstAttribute="bottom" secondItem="TKN-DI-NcN" secondAttribute="bottom" id="cxr-wg-Dbe"/>
+                <constraint firstAttribute="trailing" secondItem="TKN-DI-NcN" secondAttribute="trailing" id="duc-mf-oaj"/>
+                <constraint firstItem="I03-id-Mxy" firstAttribute="top" secondItem="aLd-C1-3j2" secondAttribute="bottom" constant="70" id="dx8-OW-Oj9"/>
+                <constraint firstItem="We8-dd-e3O" firstAttribute="centerX" secondItem="VH8-DN-DHm" secondAttribute="centerX" id="kmF-nr-9jY"/>
+                <constraint firstItem="VrR-WW-1Cd" firstAttribute="top" secondItem="I03-id-Mxy" secondAttribute="bottom" id="lxo-2t-CeL"/>
+                <constraint firstItem="aLd-C1-3j2" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="o6K-LU-izO"/>
+                <constraint firstItem="VrR-WW-1Cd" firstAttribute="top" secondItem="I03-id-Mxy" secondAttribute="bottom" id="oDE-rI-yqD"/>
+                <constraint firstItem="VrR-WW-1Cd" firstAttribute="centerX" secondItem="I03-id-Mxy" secondAttribute="centerX" id="t4p-KQ-mNd"/>
+                <constraint firstItem="VH8-DN-DHm" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="164" id="u1i-Uf-tQj"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="131.8840579710145" y="134.5108695652174"/>
+            <point key="canvasLocation" x="128.98550724637681" y="133.69565217391306"/>
         </view>
     </objects>
     <resources>
