@@ -18,20 +18,57 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eu sou um chat, converse comigo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jlM-1j-svF">
-                    <rect key="frame" x="78" y="357.66666666666669" width="258" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="TKN-DI-NcN">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                </imageView>
+                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="We8-dd-e3O">
+                    <rect key="frame" x="87" y="390" width="241" height="34"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VrR-WW-1Cd">
+                    <rect key="frame" x="87" y="297" width="241" height="34"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="theme" translatesAutoresizingMaskIntoConstraints="NO" id="aLd-C1-3j2">
+                    <rect key="frame" x="20" y="20" width="280" height="153"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="username" translatesAutoresizingMaskIntoConstraints="NO" id="I03-id-Mxy">
+                    <rect key="frame" x="116" y="263" width="182" height="34"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="portnumber" translatesAutoresizingMaskIntoConstraints="NO" id="CMv-VZ-RFA">
+                    <rect key="frame" x="88" y="357" width="240" height="36"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VH8-DN-DHm">
+                    <rect key="frame" x="151" y="601" width="108" height="98"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                    <state key="normal" title="Join">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="jlM-1j-svF" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Is2-m6-4RL"/>
-                <constraint firstItem="jlM-1j-svF" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="fio-W8-X8w"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="TKN-DI-NcN" secondAttribute="trailing" id="U4o-mR-Tmy"/>
+                <constraint firstItem="TKN-DI-NcN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="U60-z0-vNN"/>
+                <constraint firstItem="TKN-DI-NcN" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="p7y-v8-8Sb"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="TKN-DI-NcN" secondAttribute="bottom" id="sem-Gw-0oa"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="133" y="135"/>
+            <point key="canvasLocation" x="131.8840579710145" y="134.5108695652174"/>
         </view>
     </objects>
+    <resources>
+        <image name="background" width="1242" height="2208"/>
+        <image name="portnumber" width="990" height="92"/>
+        <image name="theme" width="799" height="446"/>
+        <image name="username" width="540" height="118"/>
+    </resources>
 </document>
