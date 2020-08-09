@@ -7,3 +7,8 @@
 //
 
 import Foundation
+import Domain
+
+protocol ChatRoomDelegate {
+    func received(message: Message)
+}

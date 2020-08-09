@@ -10,18 +10,18 @@
 		EDBC490024DFB8ED00E26BA1 /* Socket.h in Headers */ = {isa = PBXBuildFile; fileRef = EDBC48FE24DFB8ED00E26BA1 /* Socket.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EDBC490724DFB90900E26BA1 /* ChatRoomInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBC490624DFB90900E26BA1 /* ChatRoomInterface.swift */; };
 		EDBC490924DFB93600E26BA1 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBC490824DFB93600E26BA1 /* ChatRoom.swift */; };
-		EDBC490C24DFB99B00E26BA1 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDBC490B24DFB99B00E26BA1 /* Domain.framework */; };
-		EDBC490D24DFB99B00E26BA1 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EDBC490B24DFB99B00E26BA1 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EDBC491024E048E800E26BA1 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDBC490F24E048E800E26BA1 /* Domain.framework */; };
+		EDBC491124E048E800E26BA1 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EDBC490F24E048E800E26BA1 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		EDBC490E24DFB99B00E26BA1 /* Embed Frameworks */ = {
+		EDBC491224E048E800E26BA1 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				EDBC490D24DFB99B00E26BA1 /* Domain.framework in Embed Frameworks */,
+				EDBC491124E048E800E26BA1 /* Domain.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -35,6 +35,7 @@
 		EDBC490624DFB90900E26BA1 /* ChatRoomInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomInterface.swift; sourceTree = "<group>"; };
 		EDBC490824DFB93600E26BA1 /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
 		EDBC490B24DFB99B00E26BA1 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDBC490F24E048E800E26BA1 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDBC490C24DFB99B00E26BA1 /* Domain.framework in Frameworks */,
+				EDBC491024E048E800E26BA1 /* Domain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +81,7 @@
 		EDBC490A24DFB99B00E26BA1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EDBC490F24E048E800E26BA1 /* Domain.framework */,
 				EDBC490B24DFB99B00E26BA1 /* Domain.framework */,
 			);
 			name = Frameworks;
@@ -107,7 +109,7 @@
 				EDBC48F724DFB8ED00E26BA1 /* Sources */,
 				EDBC48F824DFB8ED00E26BA1 /* Frameworks */,
 				EDBC48F924DFB8ED00E26BA1 /* Resources */,
-				EDBC490E24DFB99B00E26BA1 /* Embed Frameworks */,
+				EDBC491224E048E800E26BA1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

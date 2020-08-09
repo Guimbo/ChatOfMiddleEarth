@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+protocol ChatRoomInterface {
+    
+    func setupNetworkCommunication()
+    func joinChat(username:String)
+    func send(message: String)
+    func stopChatSession()
+
+}
