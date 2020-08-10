@@ -11,6 +11,8 @@
 		ED50F56124E04E2E00A6514A /* Socket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED50F56024E04E2E00A6514A /* Socket.framework */; };
 		ED50F56224E04E2E00A6514A /* Socket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED50F56024E04E2E00A6514A /* Socket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ED757F0D24E0B09000608E29 /* PresenterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED757F0C24E0B09000608E29 /* PresenterFactory.swift */; };
+		ED78679024E214FD00F17F91 /* FellowshipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED78678F24E214FD00F17F91 /* FellowshipView.swift */; };
+		ED78679224E2152B00F17F91 /* FellowshipView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED78679124E2152B00F17F91 /* FellowshipView.xib */; };
 		EDB5272D24DF688000BE93C4 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDB5272C24DF688000BE93C4 /* LoginView.xib */; };
 		EDB5272F24DF690C00BE93C4 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB5272E24DF690C00BE93C4 /* LoginView.swift */; };
 		EDB5273124DF6DBC00BE93C4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB5273024DF6DBC00BE93C4 /* LoginViewController.swift */; };
@@ -46,6 +48,8 @@
 		D393D784A9163F42D3080E4E /* Pods-ChatOfMiddleEarth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatOfMiddleEarth.debug.xcconfig"; path = "Target Support Files/Pods-ChatOfMiddleEarth/Pods-ChatOfMiddleEarth.debug.xcconfig"; sourceTree = "<group>"; };
 		ED50F56024E04E2E00A6514A /* Socket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Socket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED757F0C24E0B09000608E29 /* PresenterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterFactory.swift; sourceTree = "<group>"; };
+		ED78678F24E214FD00F17F91 /* FellowshipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FellowshipView.swift; sourceTree = "<group>"; };
+		ED78679124E2152B00F17F91 /* FellowshipView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FellowshipView.xib; sourceTree = "<group>"; };
 		EDB5272C24DF688000BE93C4 /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		EDB5272E24DF690C00BE93C4 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		EDB5273024DF6DBC00BE93C4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +148,8 @@
 		EDB5272124DF64D500BE93C4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				ED78678F24E214FD00F17F91 /* FellowshipView.swift */,
+				ED78679124E2152B00F17F91 /* FellowshipView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -270,6 +276,7 @@
 				EDD9979524DA1F1900B88B28 /* LaunchScreen.storyboard in Resources */,
 				EDD9979224DA1F1900B88B28 /* Assets.xcassets in Resources */,
 				EDB5272D24DF688000BE93C4 /* LoginView.xib in Resources */,
+				ED78679224E2152B00F17F91 /* FellowshipView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +332,7 @@
 				EDB5273324DF6DD900BE93C4 /* LoginPresenter.swift in Sources */,
 				EDB5274224DF760B00BE93C4 /* ViewControllersFactory.swift in Sources */,
 				EDB5273824DF701200BE93C4 /* MainCoordinator.swift in Sources */,
+				ED78679024E214FD00F17F91 /* FellowshipView.swift in Sources */,
 				ED757F0D24E0B09000608E29 /* PresenterFactory.swift in Sources */,
 				EDD9978924DA1F1400B88B28 /* AppDelegate.swift in Sources */,
 				EDB5272F24DF690C00BE93C4 /* LoginView.swift in Sources */,
