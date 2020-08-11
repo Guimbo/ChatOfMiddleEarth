@@ -11,5 +11,4 @@ import Foundation
 public protocol ChatRepositoryProtocol: AnyObject {
     func sendMessage(message: String)
     func stopChatSession()
-    
 }
