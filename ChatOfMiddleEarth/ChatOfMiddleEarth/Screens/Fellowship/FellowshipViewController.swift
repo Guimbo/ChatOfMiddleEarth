@@ -9,15 +9,15 @@ import UIKit
 
 protocol FellowshipViewPresenting {
     
-    func joinInChat(withUser user: String, andPort port: String)
+    func joinInChat()
 }
 
 class FellowshipViewController: UIViewController {
     
     private lazy var fellowshipView = FellowshipView()
-    private let presenter: FellowshipPresenting?
+    private let presenter: FellowshipViewPresenting?
     
-    init(presenter: FellowshipPresenting) {
+    init(presenter: FellowshipViewPresenting) {
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
     }
@@ -46,8 +46,8 @@ class FellowshipViewController: UIViewController {
 }
 
 extension FellowshipViewController: FellowshipViewDelegate {
-    func startChat(withUser user: String, andPort port: String) {
-        <#code#>
+    func startChat() {
+        presenter?.joinInChat()
     }
 
 }

@@ -22,6 +22,9 @@
                     <rect key="frame" x="82" y="285" width="249" height="326"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Take The Hobbits to Isengard!"/>
+                    <connections>
+                        <action selector="didTapChat:" destination="-1" eventType="touchUpInside" id="Yio-x9-Ty6"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol FellowshipViewDelegate: AnyObject {
-    func startChat(withUser user: String, andPort port: String)
+    func startChat()
 }
 
 class FellowshipView: UIView {
@@ -29,7 +29,10 @@ class FellowshipView: UIView {
         super.init(coder: coder)
         commonInit()
     }
-
+    @IBAction func didTapChat(_ sender: Any) {
+        delegate?.startChat()
+    }
+    
 }
 
 extension FellowshipView {
