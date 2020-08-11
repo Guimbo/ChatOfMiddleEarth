@@ -11,6 +11,7 @@ import Socket
 import Domain
 protocol ViewControllersFactory: AnyObject {
     func makeLoginViewController(withCoordinator coordinator: MainCoordinator) -> LoginViewController
+    func makeFellowshipViewController(withCoordinator coordinator: MainCoordinator) -> FellowshipViewController
 }
 
 class ViewControllersFactoryImplementation: ViewControllersFactory {
@@ -26,5 +27,11 @@ class ViewControllersFactoryImplementation: ViewControllersFactory {
         let loginVC = LoginViewController(presenter: presenter)
 
         return loginVC
+    }
+    
+    func makeFellowshipViewController(withCoordinator coordinator: MainCoordinator) -> FellowshipViewController {
+        let presenter = presenterFactory.makeFellowshipPresenter(withCoordinator: coordinator)
+        let fellowshipVC = FellowshipViewController(presenter: presenter)
+        return fellowshipVC
     }
 }

@@ -12,10 +12,11 @@ import Domain
 
 protocol PresenterFactory: AnyObject {
     func makeLoginPresenter(withCoordinator coordinator: MainCoordinator) -> LoginPresenter
+    func makeFellowshipPresenter(withCoordinator coordinator: MainCoordinator) -> FellowshipPresenter
 }
 
 class PresenterFactoryImplementation: PresenterFactory {
-    
+
     func makeLoginPresenter(withCoordinator coordinator: MainCoordinator) -> LoginPresenter {
         
         let service = ChatRoom()
@@ -27,5 +28,11 @@ class PresenterFactoryImplementation: PresenterFactory {
                                             joinChatFormUseCase: joinChatUseCaseForm)
         return loginPresenter
     }
+    
+    func makeFellowshipPresenter(withCoordinator coordinator: MainCoordinator) -> FellowshipPresenter {
+        let fellowshipPresenter = FellowshipPresenter(coordinator: coordinator)
+        return fellowshipPresenter
+    }
+    
 }
 
