@@ -19,9 +19,11 @@ protocol PresenterFactory: AnyObject {
 
 class PresenterFactoryImplementation: PresenterFactory {
 
+    private let service = ChatRoom()
+    
     func makeLoginPresenter(withCoordinator coordinator: MainCoordinator) -> LoginPresenter {
         
-        let service = ChatRoom()
+        
         let joinChatRepository = JoinChatRepository(chatRoom: service)
         let joinChatUseCaseForm = JoinChatUseCaseForm()
         let loginUseCase = LoginUseCase(joinChatRepository: joinChatRepository)

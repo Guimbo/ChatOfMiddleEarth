@@ -10,19 +10,25 @@ import UIKit
 import SnapKit
 import Domain
 
-class ChatViewController: UIViewController {
-
-    let chatView = ChatView()
+class ChatPresenter {
+    
     var messages: [Message] = []
     var username = ""
     var port = ""
-    
+    //UseCase de acesso ChatRoom
+    chatRoom.delegate = self
+    chatRoom.setupNetworkCommunication()
+    chatRoom.joinChat(username: username)
+}
+
+class ChatViewController: UIViewController {
+
+    let chatView = ChatView()
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        chatRoom.delegate = self
-        chatRoom.setupNetworkCommunication()
-        chatRoom.joinChat(username: username)
+
         self.view.addSubview(chatView)
         self.configChatView()
     }
