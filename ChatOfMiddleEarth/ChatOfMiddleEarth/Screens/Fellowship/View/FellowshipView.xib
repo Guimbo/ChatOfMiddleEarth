@@ -18,9 +18,12 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K5Y-ut-7be">
-                    <rect key="frame" x="82" y="285" width="249" height="326"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K5Y-ut-7be">
+                    <rect key="frame" x="57" y="298" width="300" height="300"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="300" id="FRt-Kv-2SE"/>
+                        <constraint firstAttribute="height" constant="300" id="W4v-JY-Srv"/>
+                    </constraints>
                     <state key="normal" title="Take The Hobbits to Isengard!"/>
                     <connections>
                         <action selector="didTapChat:" destination="-1" eventType="touchUpInside" id="Yio-x9-Ty6"/>
@@ -28,6 +31,10 @@
                 </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="K5Y-ut-7be" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="6J9-GH-fge"/>
+                <constraint firstItem="K5Y-ut-7be" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="V2p-xK-erw"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="131.8840579710145" y="117.85714285714285"/>
         </view>
