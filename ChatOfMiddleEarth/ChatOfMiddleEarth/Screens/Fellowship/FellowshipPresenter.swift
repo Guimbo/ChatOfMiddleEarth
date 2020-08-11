@@ -13,11 +13,15 @@ protocol FellowshipCoordinating {
 }
 
 class FellowshipPresenter {
-    private var coordinator: LoginCoordinating?
+    private var coordinator: FellowshipCoordinating?
     
-    required init(coordinator: LoginCoordinating) {
+    required init(coordinator: FellowshipCoordinating) {
         self.coordinator = coordinator
     }
 }
 
-
+extension FellowshipPresenter: FellowshipViewPresenting {
+    func joinInChat(withUser user: String, andPort port: String) {
+        self.coordinator?.showChatScreen(withUser: user, andportNumber: port)
+    }
+}
