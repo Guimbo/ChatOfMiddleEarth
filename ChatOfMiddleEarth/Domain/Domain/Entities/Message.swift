@@ -9,9 +9,9 @@
 import Foundation
 
 public struct Message {
-  let message: String
-  let senderUsername: String
-  let messageSender: MessageSender
+  public let message: String
+  public let senderUsername: String
+  public let messageSender: MessageSender
     
   public init(message: String, messageSender: MessageSender, username: String) {
     self.message = message.withoutWhitespace()
