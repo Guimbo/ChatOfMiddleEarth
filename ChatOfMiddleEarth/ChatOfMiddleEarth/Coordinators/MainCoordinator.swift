@@ -36,6 +36,11 @@ final class MainCoordinator: Coordinator {
                                                                                  username: username, port: port)
         navigationController.pushViewController(fellowshipViewController, animated: true)
     }
+    
+    private func openChatScene() {
+        let chatVC = sceneFactory.makeChatViewController(withCoordinator: self)
+        navigationController.pushViewController(chatVC, animated: true)
+    }
 }
 
 // MARK: - Login Delegate
@@ -45,8 +50,16 @@ extension MainCoordinator: LoginCoordinating {
     }
 }
 
+// MARK: - Fellowship Delegate
 extension MainCoordinator: FellowshipCoordinating {
     func showChatScreen(withUser username: String, andportNumber portnumber: String) {
-        #warning("remember: Show Chat")
+        openChatScene()
+    }
+}
+
+// MARK: - Fellowship Delegate
+extension MainCoordinator: ChatCoordinating {
+    func dismiss() {
+        navigationController.dismiss(animated: true, completion: nil)
     }
 }
