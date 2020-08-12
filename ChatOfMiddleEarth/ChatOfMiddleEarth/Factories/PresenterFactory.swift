@@ -41,6 +41,7 @@ class PresenterFactoryImplementation: PresenterFactory {
         let chatRepository = ChatRepository(chatRoom: service)
         let chatUseCase = ChatUseCase(chatRepository: chatRepository)
         let presenter = ChatPresenter(coordinator: coordinator, chatUseCase: chatUseCase)
+        service.attachDelegate(delegate: presenter)
         return presenter
     }
     

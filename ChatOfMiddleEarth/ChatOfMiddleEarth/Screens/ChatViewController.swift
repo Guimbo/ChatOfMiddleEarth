@@ -71,7 +71,7 @@ class ChatViewController: UIViewController {
     func configChatView(){
         self.chatView.snp.makeConstraints{ make in
             make.height.equalToSuperview()
-            make.width.equalTo(300)
+            make.width.equalToSuperview()
             make.left.bottom.top.equalToSuperview()
         }
     }
@@ -88,6 +88,7 @@ extension ChatViewController: MessageInputDelegate {
 }
 
 extension ChatViewController: ChatViewControllerDelegate {
+
     func checkGiveUp(message: Message) {
         if message.message == "DESISTO" {
     
