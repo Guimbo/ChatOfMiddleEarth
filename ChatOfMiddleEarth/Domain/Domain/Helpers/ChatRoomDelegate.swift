@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+public protocol ChatRoomDelegate: class {
+    func received(message: Message)
+}

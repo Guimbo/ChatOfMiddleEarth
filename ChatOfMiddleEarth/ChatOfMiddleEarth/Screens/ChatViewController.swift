@@ -13,7 +13,6 @@ import Domain
 protocol ChatViewPresenting {
     
     func attachDelegate(_ delegate: ChatViewControllerDelegate)
-    func received(message: String)
     func sendMessage(message: String)
     func addMessage(message:Message)
     func getMessagesCount() -> Int
