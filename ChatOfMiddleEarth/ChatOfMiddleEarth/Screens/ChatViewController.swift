@@ -10,20 +10,36 @@ import UIKit
 import SnapKit
 import Domain
 
-class ChatPresenter {
+protocol ChatViewPresenting {
     
-    var messages: [Message] = []
-    var username = ""
-    var port = ""
-    //UseCase de acesso ChatRoom
-    chatRoom.delegate = self
-    chatRoom.setupNetworkCommunication()
-    chatRoom.joinChat(username: username)
+    func attachDelegate(_ delegate: ChatViewControllerDelegate)
+    func received(message: String)
+    func sendMessage(message: String)
+    func addMessage(message:Message)
+    func getMessagesCount() -> Int
+    func getMessage(ByIndex index: Int) -> Message
+    func finishChat()
+}
+
+protocol ChatViewControllerDelegate: class {
+    func insertNewMessageCell(_ message: Message)
+    func checkGiveUp(message: Message)
 }
 
 class ChatViewController: UIViewController {
 
     let chatView = ChatView()
+    let presenter: ChatViewPresenting
+    
+    init(presenter: ChatViewPresenting) {
+        self.presenter = presenter
+        super.init(nibName: nil, bundle: nil)
+        self.presenter.attachDelegate(self)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -35,7 +51,7 @@ class ChatViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        chatRoom.stopChatSession()
+        presenter.finishChat()
     }
 
     override func viewDidLoad() {
@@ -66,29 +82,30 @@ class ChatViewController: UIViewController {
 //MARK - Message Input Bar
 extension ChatViewController: MessageInputDelegate {
   func sendWasTapped(message: String) {
-    chatRoom.send(message: message)
+    presenter.sendMessage(message: message)
     print("Enviando")
     print(message)
   }
 }
 
-extension ChatViewController: ChatRoomDelegate {
-    func received(message: Message) {
-        print("Receiving")
-        print(message)
-        insertNewMessageCell(message)
-        checkGiveUp(message: message)
-      }
-    
-    func checkGiveUp(message: Message){
+extension ChatViewController: ChatViewControllerDelegate {
+    func checkGiveUp(message: Message) {
         if message.message == "DESISTO" {
     
-            self.alert_one_option(titleAlert: "FIM DE JOGO", messageAlert: "Ocorrreu uma desistência na partida. A partida está encerrada.", buttonDismiss: "OK")
+            self.alert_one_option(titleAlert: "The Last Goodbye", messageAlert: "O adeus vamos dar antes da aurora", buttonDismiss: "Bye!")
             
         }
     }
-    
 
+    func insertNewMessageCell(_ message: Message) {
+      presenter.addMessage(message: message)
+      let count = presenter.getMessagesCount()
+      let indexPath = IndexPath(row: count - 1, section: 0)
+      chatView.tableView.beginUpdates()
+      chatView.tableView.insertRows(at: [indexPath], with: .bottom)
+      chatView.tableView.endUpdates()
+      chatView.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+    }
 
 }
 
@@ -101,7 +118,7 @@ extension ChatViewController {
       let point = CGPoint(x: chatView.messageInputBar.center.x, y: endFrame.origin.y - messageBarHeight/2.0)
       let inset = UIEdgeInsets(top: 0, left: 0, bottom: endFrame.size.height, right: 0)
       UIView.animate(withDuration: 0.25) {
-        self.chatView.messageInputBar.center = chatView
+        self.chatView.messageInputBar.center = point
         self.chatView.tableView.contentInset = inset
       }
     }
@@ -133,28 +150,20 @@ extension ChatViewController: UITableViewDataSource, UITableViewDelegate {
     let cell = MessageTableViewCell(style: .default, reuseIdentifier: "MessageCell")
     cell.selectionStyle = .none
     
-    let message = messages[indexPath.row]
+    let message = presenter.getMessage(ByIndex: indexPath.row)
     cell.apply(message: message)
     
     return cell
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return messages.count
+    return presenter.getMessagesCount()
   }
   
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    let height = MessageTableViewCell.height(for: messages[indexPath.row], maxSizeOfView: Float(self.view.bounds.width))
+    let height = MessageTableViewCell.height(for: presenter.getMessage(ByIndex: indexPath.row),
+                                             maxSizeOfView: Float(self.view.bounds.width))
     return height
-  }
-  
-  func insertNewMessageCell(_ message: Message) {
-    messages.append(message)
-    let indexPath = IndexPath(row: messages.count - 1, section: 0)
-    chatView.tableView.beginUpdates()
-    chatView.tableView.insertRows(at: [indexPath], with: .bottom)
-    chatView.tableView.endUpdates()
-    chatView.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
   }
 }
 

@@ -14,5 +14,6 @@ public protocol ChatRoomInterface {
     func joinChat(username:String)
     func send(message: String)
     func stopChatSession()
+    #warning("remember: Lembra do delegate")
 
 }
