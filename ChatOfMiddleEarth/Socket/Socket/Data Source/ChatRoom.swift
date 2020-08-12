@@ -9,10 +9,6 @@
 import Foundation
 import Domain
 
-public protocol ChatRoomDelegate: class {
-    func received(message: Message)
-}
-
 
 public class ChatRoom: NSObject {
     

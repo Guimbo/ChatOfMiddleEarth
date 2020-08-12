@@ -10,6 +10,9 @@
 		ED50F56424E0616300A6514A /* JoinChatUseCaseFormError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED50F56324E0616300A6514A /* JoinChatUseCaseFormError.swift */; };
 		ED50F56724E06A1B00A6514A /* JoinChatRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED50F56624E06A1B00A6514A /* JoinChatRepositoryProtocol.swift */; };
 		ED50F56924E06BD800A6514A /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED50F56824E06BD800A6514A /* LoginUseCase.swift */; };
+		ED6A676324E3543C004A75A2 /* ChatRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6A676224E3543C004A75A2 /* ChatRepositoryProtocol.swift */; };
+		ED6A676724E35BC3004A75A2 /* ChatUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6A676624E35BC3004A75A2 /* ChatUseCase.swift */; };
+		ED6A676A24E375A8004A75A2 /* ChatRoomDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6A676924E375A8004A75A2 /* ChatRoomDelegate.swift */; };
 		EDBC48DC24DFB37100E26BA1 /* Domain.h in Headers */ = {isa = PBXBuildFile; fileRef = EDBC48DA24DFB37100E26BA1 /* Domain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EDBC48EA24DFB4C300E26BA1 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBC48E924DFB4C300E26BA1 /* StringExtension.swift */; };
 		EDBC48EC24DFB54500E26BA1 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBC48EB24DFB54500E26BA1 /* Message.swift */; };
@@ -21,6 +24,9 @@
 		ED50F56324E0616300A6514A /* JoinChatUseCaseFormError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinChatUseCaseFormError.swift; sourceTree = "<group>"; };
 		ED50F56624E06A1B00A6514A /* JoinChatRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinChatRepositoryProtocol.swift; sourceTree = "<group>"; };
 		ED50F56824E06BD800A6514A /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
+		ED6A676224E3543C004A75A2 /* ChatRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRepositoryProtocol.swift; sourceTree = "<group>"; };
+		ED6A676624E35BC3004A75A2 /* ChatUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUseCase.swift; sourceTree = "<group>"; };
+		ED6A676924E375A8004A75A2 /* ChatRoomDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomDelegate.swift; sourceTree = "<group>"; };
 		EDBC48D724DFB37100E26BA1 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDBC48DA24DFB37100E26BA1 /* Domain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
 		EDBC48DB24DFB37100E26BA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -45,8 +51,17 @@
 			isa = PBXGroup;
 			children = (
 				ED50F56624E06A1B00A6514A /* JoinChatRepositoryProtocol.swift */,
+				ED6A676224E3543C004A75A2 /* ChatRepositoryProtocol.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		ED6A676824E37591004A75A2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				ED6A676924E375A8004A75A2 /* ChatRoomDelegate.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		EDBC48CD24DFB37100E26BA1 = {
@@ -71,6 +86,7 @@
 				EDBC48E224DFB38900E26BA1 /* UseCases */,
 				ED50F56524E069F500A6514A /* Repositories */,
 				EDBC48E724DFB40700E26BA1 /* Entities */,
+				ED6A676824E37591004A75A2 /* Helpers */,
 				EDBC48E824DFB4AE00E26BA1 /* Extensions */,
 				EDBC48DA24DFB37100E26BA1 /* Domain.h */,
 				EDBC48DB24DFB37100E26BA1 /* Info.plist */,
@@ -84,6 +100,7 @@
 				ED50F56824E06BD800A6514A /* LoginUseCase.swift */,
 				EDBC48EF24DFB68B00E26BA1 /* JoinChatUseCaseForm.swift */,
 				ED50F56324E0616300A6514A /* JoinChatUseCaseFormError.swift */,
+				ED6A676624E35BC3004A75A2 /* ChatUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -186,12 +203,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDBC48EA24DFB4C300E26BA1 /* StringExtension.swift in Sources */,
+				ED6A676324E3543C004A75A2 /* ChatRepositoryProtocol.swift in Sources */,
 				EDBC48F024DFB68B00E26BA1 /* JoinChatUseCaseForm.swift in Sources */,
 				EDBC48EE24DFB54E00E26BA1 /* MessageSender.swift in Sources */,
 				EDBC48EC24DFB54500E26BA1 /* Message.swift in Sources */,
 				ED50F56924E06BD800A6514A /* LoginUseCase.swift in Sources */,
 				ED50F56724E06A1B00A6514A /* JoinChatRepositoryProtocol.swift in Sources */,
+				ED6A676A24E375A8004A75A2 /* ChatRoomDelegate.swift in Sources */,
 				ED50F56424E0616300A6514A /* JoinChatUseCaseFormError.swift in Sources */,
+				ED6A676724E35BC3004A75A2 /* ChatUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

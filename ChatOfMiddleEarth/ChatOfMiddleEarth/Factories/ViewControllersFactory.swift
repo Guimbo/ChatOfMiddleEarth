@@ -9,8 +9,13 @@
 import Foundation
 import Socket
 import Domain
+
 protocol ViewControllersFactory: AnyObject {
     func makeLoginViewController(withCoordinator coordinator: MainCoordinator) -> LoginViewController
+    func makeFellowshipViewController(withCoordinator coordinator: MainCoordinator,
+                                      username:String,
+                                      port: String) -> FellowshipViewController
+    func makeChatViewController(withCoordinator coordinator: MainCoordinator) -> ChatViewController
 }
 
 class ViewControllersFactoryImplementation: ViewControllersFactory {
@@ -24,7 +29,20 @@ class ViewControllersFactoryImplementation: ViewControllersFactory {
     func makeLoginViewController(withCoordinator coordinator: MainCoordinator) -> LoginViewController {
         let presenter = presenterFactory.makeLoginPresenter(withCoordinator: coordinator)
         let loginVC = LoginViewController(presenter: presenter)
-
         return loginVC
+    }
+    
+    func makeFellowshipViewController(withCoordinator coordinator: MainCoordinator,username:String,port: String) -> FellowshipViewController{
+        let presenter = presenterFactory.makeFellowshipPresenter(withCoordinator: coordinator,
+                                                                 username: username,
+                                                                 port: port)
+        let fellowshipVC = FellowshipViewController(presenter: presenter)
+        return fellowshipVC
+    }
+    
+    func makeChatViewController(withCoordinator coordinator: MainCoordinator) -> ChatViewController {
+        let presenter = presenterFactory.makeChatPresenter(withCoordinator: coordinator)
+        let chatVC = ChatViewController(presenter: presenter)
+        return chatVC
     }
 }

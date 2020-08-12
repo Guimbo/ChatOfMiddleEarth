@@ -10,7 +10,7 @@ import Foundation
 import Domain
 
 protocol LoginCoordinating {
-    func showChatScreen(withUser username: String, andportNumber portnumber: String)
+    func showFellowshipScreen(withUser username: String, andportNumber portnumber: String)
 }
 
 class LoginPresenter {
@@ -39,7 +39,7 @@ extension LoginPresenter: LoginViewPresenting {
                     switch result{
                     case .success:
                         print(user, port)
-                        self.coordinator?.showChatScreen(withUser: user, andportNumber: port)
+                        self.coordinator?.showFellowshipScreen(withUser: user, andportNumber: port)
                     case .failure(let error):
                         debugPrint(error.localizedDescription)
                     }
