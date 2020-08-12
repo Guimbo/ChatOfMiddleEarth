@@ -15,6 +15,7 @@ protocol ViewControllersFactory: AnyObject {
     func makeFellowshipViewController(withCoordinator coordinator: MainCoordinator,
                                       username:String,
                                       port: String) -> FellowshipViewController
+    func makeChatViewController(withCoordinator coordinator: MainCoordinator) -> ChatViewController
 }
 
 class ViewControllersFactoryImplementation: ViewControllersFactory {
@@ -28,7 +29,6 @@ class ViewControllersFactoryImplementation: ViewControllersFactory {
     func makeLoginViewController(withCoordinator coordinator: MainCoordinator) -> LoginViewController {
         let presenter = presenterFactory.makeLoginPresenter(withCoordinator: coordinator)
         let loginVC = LoginViewController(presenter: presenter)
-
         return loginVC
     }
     
@@ -38,5 +38,11 @@ class ViewControllersFactoryImplementation: ViewControllersFactory {
                                                                  port: port)
         let fellowshipVC = FellowshipViewController(presenter: presenter)
         return fellowshipVC
+    }
+    
+    func makeChatViewController(withCoordinator coordinator: MainCoordinator) -> ChatViewController {
+        let presenter = presenterFactory.makeChatPresenter(withCoordinator: coordinator)
+        let chatVC = ChatViewController(presenter: presenter)
+        return chatVC
     }
 }
