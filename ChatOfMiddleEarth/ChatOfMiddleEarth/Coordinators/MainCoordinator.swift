@@ -27,14 +27,39 @@ final class MainCoordinator: Coordinator {
     }
 
     private func openLoginScreen() {
-        let loginView = sceneFactory.makeLoginViewController(withCoordinator: self)
-        navigationController.pushViewController(loginView, animated: true)
+        let loginViewController = sceneFactory.makeLoginViewController(withCoordinator: self)
+        navigationController.pushViewController(loginViewController, animated: true)
+    }
+    
+    private func openFellowshipScene(username: String, port: String) {
+        let fellowshipViewController = sceneFactory.makeFellowshipViewController(withCoordinator: self,
+                                                                                 username: username, port: port)
+        navigationController.pushViewController(fellowshipViewController, animated: true)
+    }
+    
+    private func openChatScene() {
+        let chatVC = sceneFactory.makeChatViewController(withCoordinator: self)
+        navigationController.pushViewController(chatVC, animated: true)
     }
 }
 
 // MARK: - Login Delegate
 extension MainCoordinator: LoginCoordinating {
-    func showChatScreen(withUser username: String, andportNumber portNumber: String) {
-        #warning("remember: add chat screen")
+    func showFellowshipScreen(withUser username: String, andportNumber portnumber: String) {
+        openFellowshipScene(username: username, port: portnumber)
+    }
+}
+
+// MARK: - Fellowship Delegate
+extension MainCoordinator: FellowshipCoordinating {
+    func showChatScreen(withUser username: String, andportNumber portnumber: String) {
+        openChatScene()
+    }
+}
+
+// MARK: - Fellowship Delegate
+extension MainCoordinator: ChatCoordinating {
+    func dismiss() {
+        navigationController.dismiss(animated: true, completion: nil)
     }
 }
