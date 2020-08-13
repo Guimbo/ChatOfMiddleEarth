@@ -12,35 +12,54 @@ protocol FellowshipViewDelegate: AnyObject {
     func startChat()
 }
 
-class FellowshipView: UIView {
+import UIKit
 
-    @IBOutlet var contentView: UIView!
-    
-    //Properties
-    weak var delegate: FellowshipViewDelegate?
-    
-    
-    override init(frame: CGRect) {
+final class FellowshipView: UIView {
+
+    // MARK: - Enum With internal Sizes
+    fileprivate enum InternalSizes: CGFloat {
+        case background = 92.0
+        case fontSize = 18.0
+    }
+
+    // MARK: - Components
+
+    lazy var contentView: UIView = {
+        let view = UIView(frame: .zero)
+        view.backgroundColor = .white
+        return view
+    }()
+
+    // MARK: - Setup Init
+    override init(frame: CGRect = .zero) {
         super.init(frame: frame)
-
+        self.backgroundColor = .white
+        setupView()
     }
-    
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        
+        fatalError("init(coder:) has not been implemented")
     }
-//    @IBAction func didTapChat(_ sender: Any) {
-//        delegate?.startChat()
-//    }
-    
+
 }
 
-extension FellowshipView {
+extension FellowshipView: CodeViewProtocol {
 
-    private func commonInit() {
-        Bundle.main.loadNibNamed("FellowshipView", owner: self, options: nil)
-        addSubview(contentView)
-        contentView.frame = self.bounds
-        contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    // MARK: - Hierarchy
+    func buildViewsInHierarchy() {
+        addSubviews([contentView])
+
     }
+
+    // MARK: - Constraints
+    func setContrains() {
+        NSLayoutConstraint.activate([
+
+            contentView.topAnchor.constraint(equalTo: self.topAnchor),
+            contentView.leftAnchor.constraint(equalTo: self.leftAnchor),
+            contentView.rightAnchor.constraint(equalTo: self.rightAnchor),
+            contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+
+        ])
+    }
+
 }
