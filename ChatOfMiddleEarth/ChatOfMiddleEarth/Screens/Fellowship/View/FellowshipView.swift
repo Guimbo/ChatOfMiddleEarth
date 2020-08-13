@@ -29,9 +29,9 @@ class FellowshipView: UIView {
         super.init(coder: coder)
         commonInit()
     }
-    @IBAction func didTapChat(_ sender: Any) {
-        delegate?.startChat()
-    }
+//    @IBAction func didTapChat(_ sender: Any) {
+//        delegate?.startChat()
+//    }
     
 }
 

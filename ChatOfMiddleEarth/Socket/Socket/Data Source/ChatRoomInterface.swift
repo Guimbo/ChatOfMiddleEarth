@@ -6,7 +6,7 @@
 //  Copyright © 2020 Guilherme Araujo. All rights reserved.
 //
 
-import Foundation
+import Foundation 
 
 public protocol ChatRoomInterface {
     
@@ -16,3 +16,12 @@ public protocol ChatRoomInterface {
     func stopChatSession()
 
 }
+
+//public protocol ChatRoomInterface {
+//
+//    func setupNetworkCommunication(inPort portnumber: UInt32)
+//    func joinChat(username:String)
+//    func send(message: String)
+//    func stopChatSession()
+//
+//}
