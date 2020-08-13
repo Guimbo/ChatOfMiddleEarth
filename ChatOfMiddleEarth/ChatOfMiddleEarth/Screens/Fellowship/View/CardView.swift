@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class EnterpriseCard: UIView {
+final class CardView: UIView {
 
     // MARK: - Enum with Internal Sizes
     fileprivate enum InternalSizes: CGFloat {
@@ -24,7 +24,15 @@ final class EnterpriseCard: UIView {
         textColor: UIColor.white,
         numberOfLines: 1,
         lineBreakMode: nil,
-        fontType: UIFont.systemFont(ofSize: 18),
+        fontType: UIFont.boldSystemFont(ofSize: 18),
+        alignment: .center)
+    
+    lazy var friendMessages: UILabel = UILabel (
+        text: "3 Mensagens",
+        textColor: UIColor.white,
+        numberOfLines: 1,
+        lineBreakMode: nil,
+        fontType: UIFont.systemFont(ofSize: 15),
         alignment: .center)
 
     // MARK: - Init Functions
@@ -38,29 +46,29 @@ final class EnterpriseCard: UIView {
     }
 }
 
-extension EnterpriseCard: CodeViewProtocol {
+extension CardView: CodeViewProtocol {
 
     // MARK: - Hierarchy
     func buildViewsInHierarchy() {
-        addSubviews([logoEnterprise, nameEnterprise])
+        addSubviews([nameFriend, friendMessages])
     }
 
     // MARK: - Constraints
     func setContrains() {
         NSLayoutConstraint.activate([
 
-            logoEnterprise.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            logoEnterprise.widthAnchor.constraint(equalToConstant: InternalSizes.smallWidht.rawValue),
-            logoEnterprise.heightAnchor.constraint(equalToConstant: Sizes.xheight.rawValue),
-            logoEnterprise.topAnchor.constraint(
-                equalTo: self.topAnchor, constant: Metrics.large.rawValue),
+            nameFriend.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            nameFriend.widthAnchor.constraint(equalToConstant: InternalSizes.smallWidht.rawValue),
+            nameFriend.heightAnchor.constraint(equalToConstant: 24.0),
+            nameFriend.topAnchor.constraint(
+                equalTo: self.topAnchor, constant: 32.0),
 
-            nameEnterprise.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            nameEnterprise.topAnchor.constraint(
-                equalTo: logoEnterprise.bottomAnchor, constant: Metrics.xsmall.rawValue),
-            nameEnterprise.leftAnchor.constraint(equalTo: self.leftAnchor),
-            nameEnterprise.rightAnchor.constraint(equalTo: self.rightAnchor),
-            nameEnterprise.heightAnchor.constraint(equalToConstant: Sizes.xheight.rawValue)
+            friendMessages.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            friendMessages.topAnchor.constraint(
+                equalTo: nameFriend.bottomAnchor, constant: 4.0),
+            friendMessages.leftAnchor.constraint(equalTo: self.leftAnchor),
+            friendMessages.rightAnchor.constraint(equalTo: self.rightAnchor),
+            friendMessages.heightAnchor.constraint(equalToConstant: 24.0)
 
         ])
     }
