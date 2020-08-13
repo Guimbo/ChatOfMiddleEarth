@@ -58,7 +58,7 @@ extension CardView: CodeViewProtocol {
         NSLayoutConstraint.activate([
 
             nameFriend.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            nameFriend.widthAnchor.constraint(equalToConstant: InternalSizes.smallWidht.rawValue),
+           // nameFriend.widthAnchor.constraint(equalToConstant: InternalSizes.smallWidht.rawValue),
             nameFriend.heightAnchor.constraint(equalToConstant: 24.0),
             nameFriend.topAnchor.constraint(
                 equalTo: self.topAnchor, constant: 32.0),

@@ -40,8 +40,22 @@ class FellowshipViewController: UIViewController {
     override func loadView() {
         super.loadView()
         self.view = fellowshipView
+        showListOfFriends([])
     }
 
+
+}
+
+// MARK: - Presenter Functions
+extension FellowshipViewController: FellowshipDelegate {
+
+    func showListOfFriends(_ listOfFriends: [Friend]) {
+        self.fellowshipView.contentView.cleanView()
+        self.contacts.reloadData()
+        self.configTableView()
+        self.fellowshipView.contentView.addSubview(contacts)
+        self.contacts.setOwnerView(owner: self.fellowshipView.contentView)
+    }
 
 }
 
@@ -60,7 +74,8 @@ extension FellowshipViewController {
 extension FellowshipViewController:  UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (self.presenter?.getCountFriends())!
+        //return (self.presenter?.getCountFriends())!
+        return 10
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -70,39 +85,31 @@ extension FellowshipViewController:  UITableViewDataSource, UITableViewDelegate 
                 return UITableViewCell()
         }
 
-        let friend = self.presenter?.getFriend(byIndex: indexPath.row)
+        //let friend = self.presenter?.getFriend(byIndex: indexPath.row)
 
-        cell.friendCard.nameFriend.text = friend?.name
+        cell.friendCard.nameFriend.text = "Aragorn"
 
         if let color = UIColor.colorTable.randomElement() {
-            cell.cardEnterprise.backgroundColor = color
-            cell.cardEnterprise.layer.borderColor = color.cgColor
+            cell.friendCard.backgroundColor = color
+            cell.friendCard.layer.borderColor = color.cgColor
         }
 
         cell.selectionStyle = .none
         return cell
     }
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.startLoading()
-        let selectedEnterprise = (self.presenter?.getEnterprise(byIndex: indexPath.row))!
-        guard let cell = tableView.cellForRow(at: indexPath) as? EnterpriseCell else {
-            return
-        }
-
-        guard let selectedColor = cell.cardEnterprise.backgroundColor else { return }
-        guard let indexColor: Int = UIColor.colorTable.firstIndex(of: selectedColor) else { return }
-
-        self.delegate?.showDetails(withEnterprise: selectedEnterprise,
-                                   andIndex: indexColor)
-    }
-
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = LabelView()
-        let count = (self.presenter?.getCountEnterprises())!
-        header.numberOfResults.text = "\(count) Resultados encontrados"
-        return header
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let selectedEnterprise = (self.presenter?.getEnterprise(byIndex: indexPath.row))!
+//        guard let cell = tableView.cellForRow(at: indexPath) as? EnterpriseCell else {
+//            return
+//        }
+//
+//        guard let selectedColor = cell.cardEnterprise.backgroundColor else { return }
+//        guard let indexColor: Int = UIColor.colorTable.firstIndex(of: selectedColor) else { return }
+//
+//        self.delegate?.showDetails(withEnterprise: selectedEnterprise,
+//                                   andIndex: indexColor)
+//    }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 56

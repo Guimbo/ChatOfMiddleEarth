@@ -12,6 +12,10 @@ protocol FellowshipCoordinating {
     func showChatScreen(withUser username: String, andportNumber portnumber: String)
 }
 
+protocol FellowshipDelegate: class {
+    func showListOfFriends(_ listOfFriends: [Friend])
+}
+
 class FellowshipPresenter {
     private var coordinator: FellowshipCoordinating?
     private var username: String
