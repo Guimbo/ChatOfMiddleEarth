@@ -8,12 +8,6 @@
 
 import UIKit
 
-protocol FellowshipViewDelegate: AnyObject {
-    func startChat()
-}
-
-import UIKit
-
 final class FellowshipView: UIView {
 
     // MARK: - Enum With internal Sizes
