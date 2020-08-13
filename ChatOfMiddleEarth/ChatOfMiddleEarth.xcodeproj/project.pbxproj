@@ -16,6 +16,7 @@
 		ED2494F624E4C87E00AA51F5 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2494F524E4C87E00AA51F5 /* UITableView+Extensions.swift */; };
 		ED2494F824E565C600AA51F5 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2494F724E565C600AA51F5 /* UIColor+Extensions.swift */; };
 		ED2494FB24E5695700AA51F5 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2494FA24E5695700AA51F5 /* Friend.swift */; };
+		ED2494FD24E56DB300AA51F5 /* CustomNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2494FC24E56DB300AA51F5 /* CustomNavigation.swift */; };
 		ED50F56124E04E2E00A6514A /* Socket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED50F56024E04E2E00A6514A /* Socket.framework */; };
 		ED50F56224E04E2E00A6514A /* Socket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED50F56024E04E2E00A6514A /* Socket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ED6A676124E336A8004A75A2 /* ChatViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6A676024E336A8004A75A2 /* ChatViewPresenter.swift */; };
@@ -69,6 +70,7 @@
 		ED2494F524E4C87E00AA51F5 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		ED2494F724E565C600AA51F5 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		ED2494FA24E5695700AA51F5 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		ED2494FC24E56DB300AA51F5 /* CustomNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigation.swift; sourceTree = "<group>"; };
 		ED50F56024E04E2E00A6514A /* Socket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Socket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED6A676024E336A8004A75A2 /* ChatViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewPresenter.swift; sourceTree = "<group>"; };
 		ED757F0C24E0B09000608E29 /* PresenterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterFactory.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			children = (
 				ED2494F024E4C82400AA51F5 /* UIKit */,
 				ED78679824E2224900F17F91 /* DrawedLabel.swift */,
+				ED2494FC24E56DB300AA51F5 /* CustomNavigation.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				EDB5274224DF760B00BE93C4 /* ViewControllersFactory.swift in Sources */,
 				ED78679424E216F900F17F91 /* FellowshipViewController.swift in Sources */,
 				ED2494ED24E4C65500AA51F5 /* CodeViewProtocol.swift in Sources */,
+				ED2494FD24E56DB300AA51F5 /* CustomNavigation.swift in Sources */,
 				ED78679924E2224900F17F91 /* DrawedLabel.swift in Sources */,
 				ED2494EF24E4C76B00AA51F5 /* CardView.swift in Sources */,
 				ED78679F24E224C600F17F91 /* ChatView.swift in Sources */,
