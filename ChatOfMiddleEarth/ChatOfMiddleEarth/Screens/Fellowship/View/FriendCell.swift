@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class EnterpriseCell: UITableViewCell {
+final class FriendCell: UITableViewCell {
 
     // MARK: - Enum with Internal Size
     fileprivate enum InternalSizes: CGFloat {
@@ -18,6 +18,14 @@ final class EnterpriseCell: UITableViewCell {
 
     // MARK: - Components
 
+    lazy var friendCard: CardView = {
+        let card = CardView(bgColor: .white)
+        card.layer.borderWidth = 1.0
+        card.layer.cornerRadius = 8.0
+        card.layer.borderColor = UIColor.white.cgColor
+        card.translatesAutoresizingMaskIntoConstraints = false
+        return card
+    }()
 
     // MARK: - Init Functions
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -30,22 +38,22 @@ final class EnterpriseCell: UITableViewCell {
     }
 }
 
-extension EnterpriseCell : CodeViewProtocol {
+extension FriendCell : CodeViewProtocol {
 
     // MARK: - Hierarchy
     func buildViewsInHierarchy() {
-        addSubview(cardEnterprise)
+        addSubview(friendCard)
     }
 
     // MARK: - Constraints
     func setContrains() {
         NSLayoutConstraint.activate([
-            cardEnterprise.topAnchor.constraint(equalTo: self.topAnchor),
-            cardEnterprise.heightAnchor.constraint(equalToConstant: InternalSizes.bigHeight.rawValue),
-            cardEnterprise.leftAnchor.constraint(equalTo: self.leftAnchor,
-                                                 constant: Metrics.small.rawValue),
-            cardEnterprise.rightAnchor.constraint(equalTo: self.rightAnchor,
-                                                  constant: -Metrics.small.rawValue)
+            friendCard.topAnchor.constraint(equalTo: self.topAnchor),
+            friendCard.heightAnchor.constraint(equalToConstant: InternalSizes.bigHeight.rawValue),
+            friendCard.leftAnchor.constraint(equalTo: self.leftAnchor,
+                                                 constant: 16.0),
+            friendCard.rightAnchor.constraint(equalTo: self.rightAnchor,
+                                                  constant: -16.0)
         ])
     }
 }
