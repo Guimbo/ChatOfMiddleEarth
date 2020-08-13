@@ -30,6 +30,10 @@ class FellowshipViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let button = UIBarButtonItem(barButtonSystemItem: .add, target: self, action:  #selector(addTapped))
+        button.tintColor = .white
+        navigationItem.rightBarButtonItem = button
+        navigationItem.rightBarButtonItem?.tintColor = UIColor.white
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,8 +45,10 @@ class FellowshipViewController: UIViewController {
         self.view = fellowshipView
         showListOfFriends([])
     }
-
-
+    
+    @objc func addTapped() {
+        print("hjxdbsdhjbv")
+    }
 }
 
 // MARK: - Presenter Functions
