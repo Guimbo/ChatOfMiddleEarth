@@ -18,8 +18,10 @@ protocol FellowshipDelegate: class {
 
 class FellowshipPresenter {
     private var coordinator: FellowshipCoordinating?
+    var delegate: FellowshipDelegate?
     private var username: String
     private var port: String
+    var contacts:[Friend] = []
     
     required init(coordinator: FellowshipCoordinating, username: String, port: String) {
         self.coordinator = coordinator
@@ -29,6 +31,25 @@ class FellowshipPresenter {
 }
 
 extension FellowshipPresenter: FellowshipViewPresenting {
+    func setDelegate(withViewController delegate: FellowshipViewController) {
+        self.delegate = delegate
+    }
+    
+    func addFriend(withName name: String) {
+        let friend = Friend(friendName: name)
+        contacts.append(friend)
+        delegate?.showListOfFriends(contacts)
+        
+    }
+    
+    func getAllFriendsCount() -> Int {
+        return contacts.count
+    }
+    
+    func getFriend(byIndex: Int) -> Friend {
+        return contacts[byIndex]
+    }
+    
     func joinInChat() {
         coordinator?.showChatScreen(withUser: username, andportNumber: port)
     }

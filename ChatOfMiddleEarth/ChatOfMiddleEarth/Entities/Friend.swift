@@ -10,5 +10,4 @@ import Foundation
 
 struct Friend : Decodable {
     let friendName: String
-    let messages: String
 }

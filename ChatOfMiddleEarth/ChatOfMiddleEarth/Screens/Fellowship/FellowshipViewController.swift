@@ -10,6 +10,10 @@ import UIKit
 protocol FellowshipViewPresenting {
     
     func joinInChat()
+    func addFriend(withName name:String)
+    func getAllFriendsCount() -> Int
+    func getFriend(byIndex: Int) -> Friend
+    func setDelegate(withViewController delegate: FellowshipViewController)
 }
 
 class FellowshipViewController: UIViewController {
@@ -43,12 +47,28 @@ class FellowshipViewController: UIViewController {
     override func loadView() {
         super.loadView()
         self.view = fellowshipView
+        self.presenter?.setDelegate(withViewController: self)
         showListOfFriends([])
     }
     
     @objc func addTapped() {
-        print("hjxdbsdhjbv")
+        //1. Create the alert controller.
+        let alert = UIAlertController(title: "Novo Aventureiro", message: "Digite o nome", preferredStyle: .alert)
+
+        //2. Add the text field. You can configure it however you need.
+        alert.addTextField { (textField) in
+            textField.placeholder = "username"
+        }
+        // 3. Grab the value from the text field, and print it when the user clicks OK.
+        alert.addAction(UIAlertAction(title: "Adicionar", style: .default, handler: { [weak alert] (_) in
+            let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
+            self.presenter?.addFriend(withName: textField?.text ?? "")
+        }))
+
+        // 4. Present the alert.
+        self.present(alert, animated: true, completion: nil)
     }
+
 }
 
 // MARK: - Presenter Functions
@@ -79,8 +99,7 @@ extension FellowshipViewController {
 extension FellowshipViewController:  UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return (self.presenter?.getCountFriends())!
-        return 10
+        return (presenter?.getAllFriendsCount()) ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -90,7 +109,7 @@ extension FellowshipViewController:  UITableViewDataSource, UITableViewDelegate 
                 return UITableViewCell()
         }
 
-        //let friend = self.presenter?.getFriend(byIndex: indexPath.row)
+        let friend = self.presenter?.getFriend(byIndex: indexPath.row)
 
         cell.friendCard.nameFriend.text = "Aragorn"
 
