@@ -2,12 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Socket/Socket.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Domain/Domain.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:ChatOfMiddleEarth.xcodeproj">
    </FileRef>
    <FileRef
