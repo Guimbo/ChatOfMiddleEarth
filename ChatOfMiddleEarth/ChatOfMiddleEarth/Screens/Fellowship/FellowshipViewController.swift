@@ -13,7 +13,7 @@ protocol FellowshipViewPresenting {
     func getAllFriendsCount() -> Int
     func getFriend(byIndex: Int) -> Friend
     func setDelegate(withViewController delegate: FellowshipViewController)
-    func joinInChat(withUser user: String, andPort port: String)
+    func joinInChat(withFriend friend: String)
 }
 
 
@@ -128,18 +128,14 @@ extension FellowshipViewController:  UITableViewDataSource, UITableViewDelegate 
         return cell
     }
 
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let selectedEnterprise = (self.presenter?.getEnterprise(byIndex: indexPath.row))!
-//        guard let cell = tableView.cellForRow(at: indexPath) as? EnterpriseCell else {
-//            return
-//        }
-//
-//        guard let selectedColor = cell.cardEnterprise.backgroundColor else { return }
-//        guard let indexColor: Int = UIColor.colorTable.firstIndex(of: selectedColor) else { return }
-//
-//        self.delegate?.showDetails(withEnterprise: selectedEnterprise,
-//                                   andIndex: indexColor)
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        guard let selectedfriend = self.presenter?.getFriend(byIndex: indexPath.row) else { return }
+
+        //guard let cell = tableView.cellForRow(at: indexPath) as? FriendCell else { return }
+
+        self.presenter?.joinInChat(withFriend: selectedfriend.friendName)
+    }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 56

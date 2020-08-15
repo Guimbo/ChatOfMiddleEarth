@@ -37,12 +37,12 @@ class FellowshipPresenter {
 
 extension FellowshipPresenter: FellowshipViewPresenting {
 
-    func joinInChat(withUser user: String, andPort port: String) {
-        self.loginUseCase?.execute(withUser: user, andPortNumber: port) { [weak self] loginResult in
+    func joinInChat(withFriend friend: String) {
+        self.loginUseCase?.execute(withUser: self.username, andPortNumber: self.port) { [weak self] loginResult in
             guard let self = self else { return }
             switch loginResult{
             case .success:
-                print(user, port)
+                print(self.username,friend , port)
                 self.coordinator?.showChatScreen(withUser: username, andportNumber: port)
             case .failure(let error):
                 debugPrint(error.localizedDescription)
