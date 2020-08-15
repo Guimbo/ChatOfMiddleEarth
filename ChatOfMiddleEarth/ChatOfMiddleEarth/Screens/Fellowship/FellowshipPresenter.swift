@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Domain
 
 protocol FellowshipCoordinating {
     func showChatScreen(withUser username: String, andportNumber portnumber: String)
@@ -18,19 +19,37 @@ protocol FellowshipDelegate: class {
 
 class FellowshipPresenter {
     private var coordinator: FellowshipCoordinating?
+    private var loginUseCase: LoginUseCase?
     var delegate: FellowshipDelegate?
     private var username: String
     private var port: String
     var contacts:[Friend] = []
     
-    required init(coordinator: FellowshipCoordinating, username: String, port: String) {
+    required init(coordinator: FellowshipCoordinating,
+                  loginUseCase: LoginUseCase,
+        username: String, port: String) {
         self.coordinator = coordinator
+        self.loginUseCase = loginUseCase
         self.username = username
         self.port = port
     }
 }
 
 extension FellowshipPresenter: FellowshipViewPresenting {
+
+    func joinInChat(withUser user: String, andPort port: String) {
+        self.loginUseCase?.execute(withUser: user, andPortNumber: port) { [weak self] loginResult in
+            guard let self = self else { return }
+            switch loginResult{
+            case .success:
+                print(user, port)
+                self.coordinator?.showChatScreen(withUser: username, andportNumber: port)
+            case .failure(let error):
+                debugPrint(error.localizedDescription)
+            }
+        }
+    }
+    
     func setDelegate(withViewController delegate: FellowshipViewController) {
         self.delegate = delegate
     }
@@ -50,7 +69,4 @@ extension FellowshipPresenter: FellowshipViewPresenting {
         return contacts[byIndex]
     }
     
-    func joinInChat() {
-        coordinator?.showChatScreen(withUser: username, andportNumber: port)
-    }
 }

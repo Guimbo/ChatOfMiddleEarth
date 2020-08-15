@@ -23,17 +23,18 @@ class PresenterFactoryImplementation: PresenterFactory {
     private let service = ChatRoom()
     
     func makeLoginPresenter(withCoordinator coordinator: MainCoordinator) -> LoginPresenter {
-        let joinChatRepository = JoinChatRepository(chatRoom: service)
         let joinChatUseCaseForm = JoinChatUseCaseForm()
-        let loginUseCase = LoginUseCase(joinChatRepository: joinChatRepository)
         let loginPresenter = LoginPresenter(coordinator: coordinator,
-                                            loginUseCase: loginUseCase,
                                             joinChatFormUseCase: joinChatUseCaseForm)
         return loginPresenter
     }
     
     func makeFellowshipPresenter(withCoordinator coordinator: MainCoordinator, username:String, port: String) -> FellowshipPresenter {
-        let fellowshipPresenter = FellowshipPresenter(coordinator: coordinator, username: username, port: port)
+        let joinChatRepository = JoinChatRepository(chatRoom: service)
+        let loginUseCase = LoginUseCase(joinChatRepository: joinChatRepository)
+        let fellowshipPresenter = FellowshipPresenter(coordinator: coordinator,
+                                                      loginUseCase: loginUseCase,
+                                                      username: username, port: port)
         return fellowshipPresenter
     }
     

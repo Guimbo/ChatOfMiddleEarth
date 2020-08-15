@@ -9,12 +9,13 @@ import UIKit
 
 protocol FellowshipViewPresenting {
     
-    func joinInChat()
     func addFriend(withName name:String)
     func getAllFriendsCount() -> Int
     func getFriend(byIndex: Int) -> Friend
     func setDelegate(withViewController delegate: FellowshipViewController)
+    func joinInChat(withUser user: String, andPort port: String)
 }
+
 
 class FellowshipViewController: UIViewController {
     
@@ -38,6 +39,7 @@ class FellowshipViewController: UIViewController {
         button.tintColor = .white
         navigationItem.rightBarButtonItem = button
         navigationItem.rightBarButtonItem?.tintColor = UIColor.white
+        navigationItem.leftBarButtonItem?.action = #selector(returnToLoginView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,6 +69,10 @@ class FellowshipViewController: UIViewController {
 
         // 4. Present the alert.
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    @objc func returnToLoginView() {
+        self.navigationController?.dismiss(animated: true, completion: nil)
     }
 
 }
@@ -111,7 +117,7 @@ extension FellowshipViewController:  UITableViewDataSource, UITableViewDelegate 
 
         let friend = self.presenter?.getFriend(byIndex: indexPath.row)
 
-        cell.friendCard.nameFriend.text = "Aragorn"
+        cell.friendCard.nameFriend.text = friend?.friendName
 
         if let color = UIColor.colorTable.randomElement() {
             cell.friendCard.backgroundColor = color
@@ -143,11 +149,3 @@ extension FellowshipViewController:  UITableViewDataSource, UITableViewDelegate 
         return 128
     }
 }
-
-
-//extension FellowshipViewController: FellowshipViewDelegate {
-//    func startChat() {
-//        presenter?.joinInChat()
-//    }
-//
-//}

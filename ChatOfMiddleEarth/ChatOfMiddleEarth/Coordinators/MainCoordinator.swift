@@ -14,7 +14,6 @@ final class MainCoordinator: Coordinator {
 
     var childCoordinators: [Coordinator] = [Coordinator]()
     internal var navigationController: CustomNavigation
-    #warning("remember: Change to custom navigation")
     private let sceneFactory: ViewControllersFactory
     
     init(navigationController: CustomNavigation, sceneFactory: ViewControllersFactory) {
