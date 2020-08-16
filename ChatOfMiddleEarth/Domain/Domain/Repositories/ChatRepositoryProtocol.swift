@@ -9,6 +9,6 @@
 import Foundation
 
 public protocol ChatRepositoryProtocol: AnyObject {
-    func sendMessage(message: String)
+    func sendMessage(message: String, toDestiny destiny: String)
     func stopChatSession()
 }

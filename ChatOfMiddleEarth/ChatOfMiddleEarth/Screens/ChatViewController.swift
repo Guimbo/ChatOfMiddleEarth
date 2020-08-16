@@ -13,6 +13,7 @@ import Domain
 protocol ChatViewPresenting {
     
     func attachDelegate(_ delegate: ChatViewControllerDelegate)
+    func getFriend() -> String
     func sendMessage(message: String)
     func addMessage(message:Message)
     func getMessagesCount() -> Int
@@ -42,7 +43,6 @@ class ChatViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
 
         self.view.addSubview(chatView)
         self.configChatView()
@@ -59,10 +59,13 @@ class ChatViewController: UIViewController {
         chatView.tableView.dataSource = self
         chatView.tableView.delegate = self
         chatView.messageInputBar.delegate = self
+        navigationItem.leftBarButtonItem?.action = #selector(disconnect)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
 
-
+    @objc func disconnect() {
+        presenter.finishChat()
+    }
 
     override var prefersStatusBarHidden: Bool {
         return true

@@ -11,7 +11,7 @@ import Foundation
 public struct Message {
     public let message: String
     public let senderUsername: String
-    public let destiny: String
+    public var destiny: String
     public let messageSender: MessageSender
     
     public init(message: String, messageSender: MessageSender, username: String, destiny: String) {

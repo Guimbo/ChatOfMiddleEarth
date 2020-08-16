@@ -15,7 +15,7 @@ protocol PresenterFactory: AnyObject {
     func makeFellowshipPresenter(withCoordinator coordinator: MainCoordinator,
                                  username:String,
                                  port: String) -> FellowshipPresenter
-    func makeChatPresenter(withCoordinator coordinator: MainCoordinator) -> ChatPresenter
+    func makeChatPresenter(withCoordinator coordinator: MainCoordinator, withFriend friend: String) -> ChatPresenter
 }
 
 class PresenterFactoryImplementation: PresenterFactory {
@@ -38,10 +38,11 @@ class PresenterFactoryImplementation: PresenterFactory {
         return fellowshipPresenter
     }
     
-    func makeChatPresenter(withCoordinator coordinator: MainCoordinator) -> ChatPresenter {
+    func makeChatPresenter(withCoordinator coordinator: MainCoordinator,
+                           withFriend friend: String) -> ChatPresenter {
         let chatRepository = ChatRepository(chatRoom: service)
         let chatUseCase = ChatUseCase(chatRepository: chatRepository)
-        let presenter = ChatPresenter(coordinator: coordinator, chatUseCase: chatUseCase)
+        let presenter = ChatPresenter(coordinator: coordinator, chatUseCase: chatUseCase, friendToChat: friend)
         service.attachDelegate(delegate: presenter)
         return presenter
     }
