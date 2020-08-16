@@ -10,7 +10,7 @@ import Foundation
 import Domain
 
 protocol FellowshipCoordinating {
-    func showChatScreen(withUser username: String, andportNumber portnumber: String)
+    func showChatScreen(withFriend friend: String)
 }
 
 protocol FellowshipDelegate: class {
@@ -45,7 +45,7 @@ extension FellowshipPresenter: FellowshipViewPresenting {
             switch loginResult{
             case .success:
                 print(self.username,friend , port)
-                self.coordinator?.showChatScreen(withUser: username, andportNumber: port)
+                self.coordinator?.showChatScreen(withFriend: friend)
             case .failure(let error):
                 debugPrint(error.localizedDescription)
             }
