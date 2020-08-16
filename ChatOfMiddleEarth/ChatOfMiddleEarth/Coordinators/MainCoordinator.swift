@@ -13,11 +13,10 @@ import UIKit
 final class MainCoordinator: Coordinator {
 
     var childCoordinators: [Coordinator] = [Coordinator]()
-    internal var navigationController: UINavigationController
-    #warning("remember: Change to custom navigation")
+    internal var navigationController: CustomNavigation
     private let sceneFactory: ViewControllersFactory
     
-    init(navigationController: UINavigationController, sceneFactory: ViewControllersFactory) {
+    init(navigationController: CustomNavigation, sceneFactory: ViewControllersFactory) {
         self.navigationController = navigationController
         self.sceneFactory = sceneFactory
     }
@@ -28,17 +27,20 @@ final class MainCoordinator: Coordinator {
 
     private func openLoginScreen() {
         let loginViewController = sceneFactory.makeLoginViewController(withCoordinator: self)
+        navigationController.setupNavigation(withTitle: "", andHiddenBar: true, andAnimation: true)
         navigationController.pushViewController(loginViewController, animated: true)
     }
     
     private func openFellowshipScene(username: String, port: String) {
         let fellowshipViewController = sceneFactory.makeFellowshipViewController(withCoordinator: self,
                                                                                  username: username, port: port)
+        navigationController.setupNavigation(withTitle: "Contatos", andHiddenBar: false, andAnimation: true)
         navigationController.pushViewController(fellowshipViewController, animated: true)
     }
     
     private func openChatScene() {
         let chatVC = sceneFactory.makeChatViewController(withCoordinator: self)
+        navigationController.setupNavigation(withTitle: "", andHiddenBar: true, andAnimation: true)
         navigationController.pushViewController(chatVC, animated: true)
     }
 }

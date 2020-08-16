@@ -8,12 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		714118E2EB67DC8F021F0E98 /* Pods_ChatOfMiddleEarth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE5AB3A555F8A473766026A /* Pods_ChatOfMiddleEarth.framework */; };
+		ED2494EB24E4C50A00AA51F5 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2494EA24E4C50A00AA51F5 /* FriendCell.swift */; };
+		ED2494ED24E4C65500AA51F5 /* CodeViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2494EC24E4C65500AA51F5 /* CodeViewProtocol.swift */; };
+		ED2494EF24E4C76B00AA51F5 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2494EE24E4C76B00AA51F5 /* CardView.swift */; };
+		ED2494F224E4C84400AA51F5 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2494F124E4C84400AA51F5 /* UIView+Extensions.swift */; };
+		ED2494F424E4C86000AA51F5 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2494F324E4C86000AA51F5 /* UILabel+Extensions.swift */; };
+		ED2494F624E4C87E00AA51F5 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2494F524E4C87E00AA51F5 /* UITableView+Extensions.swift */; };
+		ED2494F824E565C600AA51F5 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2494F724E565C600AA51F5 /* UIColor+Extensions.swift */; };
+		ED2494FB24E5695700AA51F5 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2494FA24E5695700AA51F5 /* Friend.swift */; };
+		ED2494FD24E56DB300AA51F5 /* CustomNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2494FC24E56DB300AA51F5 /* CustomNavigation.swift */; };
 		ED50F56124E04E2E00A6514A /* Socket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED50F56024E04E2E00A6514A /* Socket.framework */; };
 		ED50F56224E04E2E00A6514A /* Socket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED50F56024E04E2E00A6514A /* Socket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ED6A676124E336A8004A75A2 /* ChatViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6A676024E336A8004A75A2 /* ChatViewPresenter.swift */; };
 		ED757F0D24E0B09000608E29 /* PresenterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED757F0C24E0B09000608E29 /* PresenterFactory.swift */; };
 		ED78679024E214FD00F17F91 /* FellowshipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED78678F24E214FD00F17F91 /* FellowshipView.swift */; };
-		ED78679224E2152B00F17F91 /* FellowshipView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED78679124E2152B00F17F91 /* FellowshipView.xib */; };
 		ED78679424E216F900F17F91 /* FellowshipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED78679324E216F900F17F91 /* FellowshipViewController.swift */; };
 		ED78679624E2170C00F17F91 /* FellowshipPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED78679524E2170C00F17F91 /* FellowshipPresenter.swift */; };
 		ED78679924E2224900F17F91 /* DrawedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED78679824E2224900F17F91 /* DrawedLabel.swift */; };
@@ -54,11 +62,19 @@
 /* Begin PBXFileReference section */
 		1DE5AB3A555F8A473766026A /* Pods_ChatOfMiddleEarth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatOfMiddleEarth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D393D784A9163F42D3080E4E /* Pods-ChatOfMiddleEarth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatOfMiddleEarth.debug.xcconfig"; path = "Target Support Files/Pods-ChatOfMiddleEarth/Pods-ChatOfMiddleEarth.debug.xcconfig"; sourceTree = "<group>"; };
+		ED2494EA24E4C50A00AA51F5 /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
+		ED2494EC24E4C65500AA51F5 /* CodeViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewProtocol.swift; sourceTree = "<group>"; };
+		ED2494EE24E4C76B00AA51F5 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		ED2494F124E4C84400AA51F5 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		ED2494F324E4C86000AA51F5 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
+		ED2494F524E4C87E00AA51F5 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		ED2494F724E565C600AA51F5 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		ED2494FA24E5695700AA51F5 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		ED2494FC24E56DB300AA51F5 /* CustomNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigation.swift; sourceTree = "<group>"; };
 		ED50F56024E04E2E00A6514A /* Socket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Socket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED6A676024E336A8004A75A2 /* ChatViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewPresenter.swift; sourceTree = "<group>"; };
 		ED757F0C24E0B09000608E29 /* PresenterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterFactory.swift; sourceTree = "<group>"; };
 		ED78678F24E214FD00F17F91 /* FellowshipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FellowshipView.swift; sourceTree = "<group>"; };
-		ED78679124E2152B00F17F91 /* FellowshipView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FellowshipView.xib; sourceTree = "<group>"; };
 		ED78679324E216F900F17F91 /* FellowshipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FellowshipViewController.swift; sourceTree = "<group>"; };
 		ED78679524E2170C00F17F91 /* FellowshipPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FellowshipPresenter.swift; sourceTree = "<group>"; };
 		ED78679824E2224900F17F91 /* DrawedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawedLabel.swift; sourceTree = "<group>"; };
@@ -116,10 +132,31 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		ED2494F024E4C82400AA51F5 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				ED2494F124E4C84400AA51F5 /* UIView+Extensions.swift */,
+				ED2494F324E4C86000AA51F5 /* UILabel+Extensions.swift */,
+				ED2494F524E4C87E00AA51F5 /* UITableView+Extensions.swift */,
+				ED2494F724E565C600AA51F5 /* UIColor+Extensions.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		ED2494F924E5694000AA51F5 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				ED2494FA24E5695700AA51F5 /* Friend.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		ED78679724E2220900F17F91 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				ED2494F024E4C82400AA51F5 /* UIKit */,
 				ED78679824E2224900F17F91 /* DrawedLabel.swift */,
+				ED2494FC24E56DB300AA51F5 /* CustomNavigation.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -127,6 +164,7 @@
 		EDB5271C24DF63F000BE93C4 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				ED2494EC24E4C65500AA51F5 /* CodeViewProtocol.swift */,
 				EDB5271D24DF63FB00BE93C4 /* Login */,
 				EDB5271E24DF646A00BE93C4 /* Fellowship */,
 				EDB5271F24DF648D00BE93C4 /* Chat */,
@@ -176,8 +214,9 @@
 		EDB5272124DF64D500BE93C4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				ED2494EE24E4C76B00AA51F5 /* CardView.swift */,
+				ED2494EA24E4C50A00AA51F5 /* FriendCell.swift */,
 				ED78678F24E214FD00F17F91 /* FellowshipView.swift */,
-				ED78679124E2152B00F17F91 /* FellowshipView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -236,6 +275,7 @@
 				EDB5273E24DF75C800BE93C4 /* Factories */,
 				EDB5273424DF6FA300BE93C4 /* Coordinators */,
 				EDB5271C24DF63F000BE93C4 /* Screens */,
+				ED2494F924E5694000AA51F5 /* Entities */,
 				ED78679724E2220900F17F91 /* Extensions */,
 				EDD9979124DA1F1900B88B28 /* Assets.xcassets */,
 				EDD9979324DA1F1900B88B28 /* LaunchScreen.storyboard */,
@@ -308,7 +348,6 @@
 				EDD9979524DA1F1900B88B28 /* LaunchScreen.storyboard in Resources */,
 				EDD9979224DA1F1900B88B28 /* Assets.xcassets in Resources */,
 				EDB5272D24DF688000BE93C4 /* LoginView.xib in Resources */,
-				ED78679224E2152B00F17F91 /* FellowshipView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,12 +401,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDB5273324DF6DD900BE93C4 /* LoginPresenter.swift in Sources */,
+				ED2494EB24E4C50A00AA51F5 /* FriendCell.swift in Sources */,
+				ED2494F424E4C86000AA51F5 /* UILabel+Extensions.swift in Sources */,
+				ED2494F624E4C87E00AA51F5 /* UITableView+Extensions.swift in Sources */,
 				ED6A676124E336A8004A75A2 /* ChatViewPresenter.swift in Sources */,
 				EDB5274224DF760B00BE93C4 /* ViewControllersFactory.swift in Sources */,
 				ED78679424E216F900F17F91 /* FellowshipViewController.swift in Sources */,
+				ED2494ED24E4C65500AA51F5 /* CodeViewProtocol.swift in Sources */,
+				ED2494FD24E56DB300AA51F5 /* CustomNavigation.swift in Sources */,
 				ED78679924E2224900F17F91 /* DrawedLabel.swift in Sources */,
+				ED2494EF24E4C76B00AA51F5 /* CardView.swift in Sources */,
 				ED78679F24E224C600F17F91 /* ChatView.swift in Sources */,
+				ED2494FB24E5695700AA51F5 /* Friend.swift in Sources */,
+				ED2494F824E565C600AA51F5 /* UIColor+Extensions.swift in Sources */,
 				EDB5273824DF701200BE93C4 /* MainCoordinator.swift in Sources */,
+				ED2494F224E4C84400AA51F5 /* UIView+Extensions.swift in Sources */,
 				ED78679024E214FD00F17F91 /* FellowshipView.swift in Sources */,
 				ED757F0D24E0B09000608E29 /* PresenterFactory.swift in Sources */,
 				ED78679B24E222D100F17F91 /* MessageTableViewCell.swift in Sources */,

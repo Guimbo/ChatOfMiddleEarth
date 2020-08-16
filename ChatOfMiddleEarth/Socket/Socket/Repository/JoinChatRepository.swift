@@ -17,10 +17,12 @@ public class JoinChatRepository {
 }
 
 extension JoinChatRepository: Domain.JoinChatRepositoryProtocol {
-    public func registerUserInServer(usingUserName username: String, andPortNumber portNumber: UInt32, andCompletion completion: (Result<Void, Error>) -> Void) {
-        
+    public func registerUserInServer(usingUserName username: String,
+                                     andPortNumber portNumber: UInt32,
+                                     toFriend friend: String,
+                                     andCompletion completion: (Result<Void, Error>) -> Void) {
         chatRoom.setupNetworkCommunication(inPort: portNumber)
-        chatRoom.joinChat(username: username)
+        chatRoom.joinChat(username: username, friend: friend)
         completion(.success(()))
         
     }

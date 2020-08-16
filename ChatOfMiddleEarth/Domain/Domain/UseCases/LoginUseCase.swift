@@ -11,6 +11,7 @@ import Foundation
 public protocol LoginUseCaseProtocol {
     func execute(withUser username: String,
                  andPortNumber portnumber: String,
+                 toFriend friend: String,
                  andCompletion completion: (Result<Void, Error>) -> Void)
 }
 
@@ -24,11 +25,12 @@ public class LoginUseCase {
 }
 
 extension LoginUseCase: LoginUseCaseProtocol {
-    public func execute(withUser username: String, andPortNumber portnumber: String, andCompletion completion: (Result<Void, Error>) -> Void) {
+    public func execute(withUser username: String, andPortNumber portnumber: String, toFriend friend: String, andCompletion completion: (Result<Void, Error>) -> Void) {
         
         guard let portNumberUInt32 = UInt32(portnumber) else { return }
         joinChatRepository.registerUserInServer(usingUserName: username,
                                                 andPortNumber: portNumberUInt32,
+                                                toFriend: friend,
                                                 andCompletion: completion)
     }
 }

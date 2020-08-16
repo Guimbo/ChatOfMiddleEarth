@@ -15,15 +15,12 @@ protocol LoginCoordinating {
 
 class LoginPresenter {
     private var coordinator: LoginCoordinating?
-    private var loginUseCase: LoginUseCaseProtocol?
     private var joinChatFormUseCase: JoinChatUseCaseFormProtocol?
     
     required init(coordinator: LoginCoordinating,
-                  loginUseCase: LoginUseCaseProtocol,
                   joinChatFormUseCase: JoinChatUseCaseFormProtocol) {
 
         self.coordinator = coordinator
-        self.loginUseCase = loginUseCase
         self.joinChatFormUseCase = joinChatFormUseCase
     }
 }
@@ -34,16 +31,7 @@ extension LoginPresenter: LoginViewPresenting {
             guard let self = self else { return }
             switch result {
             case .success:
-                self.loginUseCase?.execute(withUser: user, andPortNumber: port) { [weak self] loginResult in
-                    guard let self = self else { return }
-                    switch result{
-                    case .success:
-                        print(user, port)
-                        self.coordinator?.showFellowshipScreen(withUser: user, andportNumber: port)
-                    case .failure(let error):
-                        debugPrint(error.localizedDescription)
-                    }
-                }
+                self.coordinator?.showFellowshipScreen(withUser: user, andportNumber: port)
             case .failure(let error):
                 debugPrint(error.localizedDescription)
             }
