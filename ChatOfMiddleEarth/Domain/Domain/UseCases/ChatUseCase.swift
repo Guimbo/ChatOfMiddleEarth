@@ -10,7 +10,7 @@ import Foundation
 
 public protocol ChatUseCaseProtocol {
     func stopSession()
-    func sendMessageInNetworking(usingMessage message: String)
+    func sendMessageInNetworking(usingMessage message: String, toDestiny destiny: String)
 }
 
 public class ChatUseCase {
@@ -27,10 +27,9 @@ extension ChatUseCase: ChatUseCaseProtocol {
         chatRepository.stopChatSession()
     }
     
-    public func sendMessageInNetworking(usingMessage message: String) {
-        chatRepository.sendMessage(message: message)
+    public func sendMessageInNetworking(usingMessage message: String, toDestiny destiny: String) {
+        chatRepository.sendMessage(message: message, toDestiny: destiny)
     }
-    
     
     
 }

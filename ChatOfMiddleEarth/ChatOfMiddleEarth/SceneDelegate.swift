@@ -21,7 +21,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "Done"
         IQKeyboardManager.shared.enable = true
         
-        let navigation = UINavigationController()
+        let navigation = CustomNavigation()
+        navigation.setup()
+        navigation.setupNavigationBackButton()
         let scenePresenterFactory = PresenterFactoryImplementation()
         let sceneMainFactory = ViewControllersFactoryImplementation(presenterFactory: scenePresenterFactory)
         let mainCoordinator = MainCoordinator(navigationController: navigation, sceneFactory: sceneMainFactory)

@@ -17,8 +17,8 @@ public class ChatRepository {
 }
 
 extension ChatRepository: Domain.ChatRepositoryProtocol {
-    public func sendMessage(message: String) {
-        chatRoom.send(message: message)
+    public func sendMessage(message: String, toDestiny destiny: String) {
+        chatRoom.send(message: message, toFriend: destiny)
     }
 
     public func stopChatSession() {

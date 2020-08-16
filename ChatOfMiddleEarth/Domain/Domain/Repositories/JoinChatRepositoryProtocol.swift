@@ -11,5 +11,6 @@ import Foundation
 public protocol JoinChatRepositoryProtocol: AnyObject {
     func registerUserInServer(usingUserName username: String,
                               andPortNumber portNumber: UInt32,
+                              toFriend friend: String,
                               andCompletion completion: (Result<Void, Error>) -> Void)
 }
