@@ -40,7 +40,7 @@ final class MainCoordinator: Coordinator {
     
     private func openChatScene(withFriend friend: String) {
         let chatVC = sceneFactory.makeChatViewController(withCoordinator: self, andFriend: friend)
-        navigationController.setupNavigation(withTitle: "\(friend)", andHiddenBar: true, andAnimation: true)
+        navigationController.setupNavigation(withTitle: "\(friend)", andHiddenBar: false, andAnimation: true)
         navigationController.pushViewController(chatVC, animated: true)
     }
 }
