@@ -20,26 +20,34 @@ class ChatPresenter {
     private var messages:[Message] = []
     
     private weak var delegateViewController: ChatViewControllerDelegate?
+    private var friendToChat: String
     
-    required init(coordinator: ChatCoordinating, chatUseCase: ChatUseCaseProtocol) {
+    required init(coordinator: ChatCoordinating, chatUseCase: ChatUseCaseProtocol, friendToChat: String) {
         self.coordinator = coordinator
         self.chatUseCase = chatUseCase
+        self.friendToChat = friendToChat
     }
     
 }
 
 extension ChatPresenter: ChatViewPresenting {
     
+    func getFriend() -> String {
+        return friendToChat
+    }
+    
     func attachDelegate(_ delegate: ChatViewControllerDelegate) {
         self.delegateViewController = delegate
     }
     
     func sendMessage(message: String) {
-        chatUseCase.sendMessageInNetworking(usingMessage: message)
+        chatUseCase.sendMessageInNetworking(usingMessage: message, toDestiny: friendToChat)
     }
     
     func addMessage(message: Message) {
-        self.messages.append(message)
+        var newMessage = message
+        newMessage.destiny = friendToChat
+        self.messages.append(newMessage)
     }
     
     func getMessagesCount() -> Int {
