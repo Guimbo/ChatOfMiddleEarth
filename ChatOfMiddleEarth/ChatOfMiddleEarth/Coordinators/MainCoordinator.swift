@@ -38,9 +38,9 @@ final class MainCoordinator: Coordinator {
         navigationController.pushViewController(fellowshipViewController, animated: true)
     }
     
-    private func openChatScene() {
-        let chatVC = sceneFactory.makeChatViewController(withCoordinator: self)
-        navigationController.setupNavigation(withTitle: "", andHiddenBar: true, andAnimation: true)
+    private func openChatScene(withFriend friend: String) {
+        let chatVC = sceneFactory.makeChatViewController(withCoordinator: self, andFriend: friend)
+        navigationController.setupNavigation(withTitle: "\(friend)", andHiddenBar: true, andAnimation: true)
         navigationController.pushViewController(chatVC, animated: true)
     }
 }
@@ -54,8 +54,8 @@ extension MainCoordinator: LoginCoordinating {
 
 // MARK: - Fellowship Delegate
 extension MainCoordinator: FellowshipCoordinating {
-    func showChatScreen(withUser username: String, andportNumber portnumber: String) {
-        openChatScene()
+    func showChatScreen(withFriend friend: String) {
+        openChatScene(withFriend: friend)
     }
 }
 
