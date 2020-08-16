@@ -38,7 +38,9 @@ class FellowshipPresenter {
 extension FellowshipPresenter: FellowshipViewPresenting {
 
     func joinInChat(withFriend friend: String) {
-        self.loginUseCase?.execute(withUser: self.username, andPortNumber: self.port) { [weak self] loginResult in
+        self.loginUseCase?.execute(withUser: self.username,
+                                   andPortNumber: self.port,
+                                   toFriend: friend) { [weak self] loginResult in
             guard let self = self else { return }
             switch loginResult{
             case .success:
