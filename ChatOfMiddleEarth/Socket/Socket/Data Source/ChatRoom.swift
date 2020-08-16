@@ -152,7 +152,7 @@ extension ChatRoom: StreamDelegate {
                                    freeWhenDone: true)?.components(separatedBy: ":") else { return nil }
         guard let name = stringArray.first else { return nil }
         var message: String = ""
-        if stringArray.count < 2 {
+        if stringArray.count <= 2  {
             message = ""
         } else {
             message = stringArray[2]
