@@ -67,6 +67,9 @@ extension ChatPresenter: ChatRoomDelegate {
     func received(message: Message) {
         print("Receiving")
         print(message)
+        if message.senderUsername.contains("NOT"){
+            print("Abre o Middleware")
+        }
         delegateViewController?.insertNewMessageCell(message)
         delegateViewController?.checkGiveUp(message: message)
       }
