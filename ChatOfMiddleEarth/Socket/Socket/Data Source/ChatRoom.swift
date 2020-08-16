@@ -151,7 +151,12 @@ extension ChatRoom: StreamDelegate {
         guard let stringArray = String( bytesNoCopy: buffer, length: length, encoding: .utf8,
                                    freeWhenDone: true)?.components(separatedBy: ":") else { return nil }
         guard let name = stringArray.first else { return nil }
-        let message = stringArray[2]
+        var message: String = ""
+        if stringArray.count < 2 {
+            message = ""
+        } else {
+            message = stringArray[2]
+        }
         guard let destiny = stringArray.last else { return nil }
        // Descobre se este cliente ou outro enviou a mensagem com base no nome. Em produção usaria-se um token exclusivo.
        let messageSender: MessageSender = (name == self.username) ? .ourself : .someoneElse
