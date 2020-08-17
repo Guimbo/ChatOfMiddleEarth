@@ -42,6 +42,7 @@
 		EDD9978B24DA1F1400B88B28 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD9978A24DA1F1400B88B28 /* SceneDelegate.swift */; };
 		EDD9979224DA1F1900B88B28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDD9979124DA1F1900B88B28 /* Assets.xcassets */; };
 		EDD9979524DA1F1900B88B28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDD9979324DA1F1900B88B28 /* LaunchScreen.storyboard */; };
+		EDE3597024E9DD5E00ACCA6F /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE3596F24E9DD5E00ACCA6F /* Middleware.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -96,6 +97,7 @@
 		EDD9979124DA1F1900B88B28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDD9979424DA1F1900B88B28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDD9979624DA1F1900B88B28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDE3596F24E9DD5E00ACCA6F /* Middleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Middleware.swift; sourceTree = "<group>"; };
 		FDBBF43BFFCF23818D9314CB /* Pods-ChatOfMiddleEarth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatOfMiddleEarth.release.xcconfig"; path = "Target Support Files/Pods-ChatOfMiddleEarth/Pods-ChatOfMiddleEarth.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -277,11 +279,21 @@
 				EDB5271C24DF63F000BE93C4 /* Screens */,
 				ED2494F924E5694000AA51F5 /* Entities */,
 				ED78679724E2220900F17F91 /* Extensions */,
+				EDE3596E24E9DD3C00ACCA6F /* Helpers */,
 				EDD9979124DA1F1900B88B28 /* Assets.xcassets */,
 				EDD9979324DA1F1900B88B28 /* LaunchScreen.storyboard */,
 				EDD9979624DA1F1900B88B28 /* Info.plist */,
 			);
 			path = ChatOfMiddleEarth;
+			sourceTree = "<group>";
+		};
+		EDE3596E24E9DD3C00ACCA6F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				EDE3596F24E9DD5E00ACCA6F /* Middleware.swift */,
+			);
+			name = Helpers;
+			path = Entities/Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -413,6 +425,7 @@
 				ED2494EF24E4C76B00AA51F5 /* CardView.swift in Sources */,
 				ED78679F24E224C600F17F91 /* ChatView.swift in Sources */,
 				ED2494FB24E5695700AA51F5 /* Friend.swift in Sources */,
+				EDE3597024E9DD5E00ACCA6F /* Middleware.swift in Sources */,
 				ED2494F824E565C600AA51F5 /* UIColor+Extensions.swift in Sources */,
 				EDB5273824DF701200BE93C4 /* MainCoordinator.swift in Sources */,
 				ED2494F224E4C84400AA51F5 /* UIView+Extensions.swift in Sources */,

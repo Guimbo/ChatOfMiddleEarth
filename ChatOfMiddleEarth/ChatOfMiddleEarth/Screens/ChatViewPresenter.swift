@@ -18,6 +18,7 @@ class ChatPresenter {
     private var chatUseCase: ChatUseCaseProtocol
     
     private var messages:[Message] = []
+    private var middleware: Middleware?
     
     private weak var delegateViewController: ChatViewControllerDelegate?
     private var friendToChat: String
@@ -68,6 +69,7 @@ extension ChatPresenter: ChatRoomDelegate {
         print("Receiving")
         print(message)
         if message.senderUsername.contains("NOT"){
+            self.middleware = Middleware()
             print("Abre o Middleware")
         }
         delegateViewController?.insertNewMessageCell(message)
