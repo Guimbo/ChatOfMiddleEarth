@@ -18,6 +18,7 @@ class ChatPresenter {
     private var chatUseCase: ChatUseCaseProtocol
     
     private var messages:[Message] = []
+    private var middleware: Middleware?
     
     private weak var delegateViewController: ChatViewControllerDelegate?
     private var friendToChat: String
@@ -41,6 +42,9 @@ extension ChatPresenter: ChatViewPresenting {
     }
     
     func sendMessage(message: String) {
+        let messageFake = Message(message: message,
+                                  messageSender: .ourself, username: "Me", destiny: self.friendToChat)
+        delegateViewController?.insertNewMessageCell(messageFake)
         chatUseCase.sendMessageInNetworking(usingMessage: message, toDestiny: friendToChat)
     }
     
@@ -48,6 +52,7 @@ extension ChatPresenter: ChatViewPresenting {
         var newMessage = message
         newMessage.destiny = friendToChat
         self.messages.append(newMessage)
+        
     }
     
     func getMessagesCount() -> Int {

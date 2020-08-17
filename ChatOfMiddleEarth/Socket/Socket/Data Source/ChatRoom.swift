@@ -61,13 +61,13 @@ extension ChatRoom: ChatRoomInterface {
     
     public func joinChat(username: String, friend: String) {
         //Contrói a mensagem com um chat room protocol
-        let data = "iam:\(username):\(friend)".data(using: .utf8)!
+        let data = "IAM:\(username):\(friend)".data(using: .utf8)!
         
         //salva o nome para usar no chat depois
         self.username = username
         
         //Uma maneira conveniente de trabalhar com uma versão de ponteiro insegura de alguns dados dentro dos limites seguros de uma closure.
-        _ = data.withUnsafeBytes{
+        _ = data.withUnsafeBytes {
           guard let pointer = $0.baseAddress?.assumingMemoryBound(to: UInt8.self) else {
             print("Error joining chat")
             return
@@ -78,7 +78,7 @@ extension ChatRoom: ChatRoomInterface {
     }
     
     public func send(message: String, toFriend friend: String) {
-        let data = "msg:\(message):\(friend)".data(using: .utf8)!
+        let data = "MSG:\(message):\(friend)".data(using: .utf8)!
         
         _ = data.withUnsafeBytes{
           guard let pointer = $0.baseAddress?.assumingMemoryBound(to: UInt8.self) else {
@@ -150,16 +150,12 @@ extension ChatRoom: StreamDelegate {
        // bytes quando estiver concluída. Depois divide a mensagem para tratat o nome e a mensagem separadamente.
         guard let stringArray = String( bytesNoCopy: buffer, length: length, encoding: .utf8,
                                    freeWhenDone: true)?.components(separatedBy: ":") else { return nil }
-        guard let name = stringArray.first else { return nil }
+        guard let name = stringArray.last else { return nil }
         var message: String = ""
-        if stringArray.count < 2 {
-            message = ""
-        } else {
-            message = stringArray[2]
-        }
+        message = stringArray[1]
         guard let destiny = stringArray.last else { return nil }
        // Descobre se este cliente ou outro enviou a mensagem com base no nome. Em produção usaria-se um token exclusivo.
-       let messageSender: MessageSender = (name == self.username) ? .ourself : .someoneElse
+       let messageSender: MessageSender = (name == self.username) ? .someoneElse : .ourself
        
        //Contrói a mensagem e a retorna.
        return Message(message: message, messageSender: messageSender, username: name, destiny: destiny)

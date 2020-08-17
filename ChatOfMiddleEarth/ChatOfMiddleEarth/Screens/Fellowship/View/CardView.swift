@@ -28,7 +28,7 @@ final class CardView: UIView {
         alignment: .center)
     
     lazy var friendMessages: UILabel = UILabel (
-        text: "3 Mensagens",
+        text: "",
         textColor: UIColor.white,
         numberOfLines: 1,
         lineBreakMode: nil,
