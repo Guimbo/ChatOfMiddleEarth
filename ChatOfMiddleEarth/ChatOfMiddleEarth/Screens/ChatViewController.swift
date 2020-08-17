@@ -85,6 +85,7 @@ class ChatViewController: UIViewController {
 extension ChatViewController: MessageInputDelegate {
   func sendWasTapped(message: String) {
     presenter.sendMessage(message: message)
+    self.chatView.tableView.reloadData()
     print("Enviando")
     print(message)
   }

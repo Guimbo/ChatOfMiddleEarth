@@ -42,6 +42,9 @@ extension ChatPresenter: ChatViewPresenting {
     }
     
     func sendMessage(message: String) {
+        let messageFake = Message(message: message,
+                                  messageSender: .ourself, username: "Me", destiny: self.friendToChat)
+        delegateViewController?.insertNewMessageCell(messageFake)
         chatUseCase.sendMessageInNetworking(usingMessage: message, toDestiny: friendToChat)
     }
     
@@ -49,6 +52,7 @@ extension ChatPresenter: ChatViewPresenting {
         var newMessage = message
         newMessage.destiny = friendToChat
         self.messages.append(newMessage)
+        
     }
     
     func getMessagesCount() -> Int {
@@ -68,10 +72,6 @@ extension ChatPresenter: ChatRoomDelegate {
     func received(message: Message) {
         print("Receiving")
         print(message)
-        if message.senderUsername.contains("NOT"){
-            self.middleware = Middleware()
-            print("Abre o Middleware")
-        }
         delegateViewController?.insertNewMessageCell(message)
         delegateViewController?.checkGiveUp(message: message)
       }
