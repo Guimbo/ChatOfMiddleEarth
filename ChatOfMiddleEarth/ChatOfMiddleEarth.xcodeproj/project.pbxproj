@@ -29,6 +29,7 @@
 		ED78679D24E2241900F17F91 /* MessageInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED78679C24E2241900F17F91 /* MessageInputView.swift */; };
 		ED78679F24E224C600F17F91 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED78679E24E224C600F17F91 /* ChatView.swift */; };
 		ED7867A124E2250600F17F91 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7867A024E2250600F17F91 /* ChatViewController.swift */; };
+		EDA3BE182509C26400225F8E /* Extensions+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA3BE172509C26400225F8E /* Extensions+Alert.swift */; };
 		EDB5272D24DF688000BE93C4 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDB5272C24DF688000BE93C4 /* LoginView.xib */; };
 		EDB5272F24DF690C00BE93C4 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB5272E24DF690C00BE93C4 /* LoginView.swift */; };
 		EDB5273124DF6DBC00BE93C4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB5273024DF6DBC00BE93C4 /* LoginViewController.swift */; };
@@ -83,6 +84,7 @@
 		ED78679C24E2241900F17F91 /* MessageInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageInputView.swift; sourceTree = "<group>"; };
 		ED78679E24E224C600F17F91 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		ED7867A024E2250600F17F91 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		EDA3BE172509C26400225F8E /* Extensions+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+Alert.swift"; sourceTree = "<group>"; };
 		EDB5272C24DF688000BE93C4 /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		EDB5272E24DF690C00BE93C4 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		EDB5273024DF6DBC00BE93C4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				ED2494F324E4C86000AA51F5 /* UILabel+Extensions.swift */,
 				ED2494F524E4C87E00AA51F5 /* UITableView+Extensions.swift */,
 				ED2494F724E565C600AA51F5 /* UIColor+Extensions.swift */,
+				EDA3BE172509C26400225F8E /* Extensions+Alert.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 				ED78679424E216F900F17F91 /* FellowshipViewController.swift in Sources */,
 				ED2494ED24E4C65500AA51F5 /* CodeViewProtocol.swift in Sources */,
 				ED2494FD24E56DB300AA51F5 /* CustomNavigation.swift in Sources */,
+				EDA3BE182509C26400225F8E /* Extensions+Alert.swift in Sources */,
 				ED78679924E2224900F17F91 /* DrawedLabel.swift in Sources */,
 				ED2494EF24E4C76B00AA51F5 /* CardView.swift in Sources */,
 				ED78679F24E224C600F17F91 /* ChatView.swift in Sources */,

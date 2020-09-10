@@ -17,7 +17,7 @@ public class ChatRoom: NSObject {
     private var outputStream: OutputStream!
     weak var delegate: ChatRoomDelegate?
     private var username: String?
-    private var portnumber: UInt32?
+    private var portnumber: UInt32 = 9795
     private let maxReadLength = 4096
     
     public func attachDelegate(delegate: ChatRoomDelegate) {

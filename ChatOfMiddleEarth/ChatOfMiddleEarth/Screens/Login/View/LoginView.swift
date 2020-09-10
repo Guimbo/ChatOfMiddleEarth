@@ -9,30 +9,32 @@
 import UIKit
 
 protocol LoginViewDelegate: AnyObject {
-    func doLogin(withUser user: String, andPort port: String)
+    func doLogin(user: String, xPos: String, yPos: String)
 }
 
 class LoginView: UIView {
-    
-    
+
+
     //Outlets
     @IBOutlet var contentView: UIView!
-    @IBOutlet weak var userNameTextField: UITextField! {
-        didSet {
-            userNameTextField.keyboardType = .default
-            userNameTextField.returnKeyType = .done
-            userNameTextField.autocorrectionType = .no
-        }
-    }
-    @IBOutlet weak var portNumberTextField: UITextField!{
-        didSet {
-            portNumberTextField.keyboardType = .numberPad
-            portNumberTextField.returnKeyType = .done
-            portNumberTextField.autocorrectionType = .no
-        }
-    }
-    
-    
+    @IBOutlet weak var nametextField: UITextField! {
+           didSet {
+               nametextField.returnKeyType = .done
+               nametextField.autocorrectionType = .no
+           }
+       }
+    @IBOutlet weak var XtextField: UITextField! {
+              didSet {
+                  XtextField.returnKeyType = .done
+                  XtextField.autocorrectionType = .no
+              }
+          }
+    @IBOutlet weak var YtextField: UITextField! {
+              didSet {
+                  YtextField.returnKeyType = .done
+                  YtextField.autocorrectionType = .no
+              }
+          }
     
     //Properties
     weak var delegate: LoginViewDelegate?
@@ -48,9 +50,11 @@ class LoginView: UIView {
         commonInit()
     }
 
+
     @IBAction func doLogin(_ sender: Any) {
-        delegate?.doLogin(withUser: userNameTextField.text ?? "",
-                          andPort: portNumberTextField.text ?? "")
+        delegate?.doLogin(user: nametextField.text ?? "",
+                          xPos: XtextField.text ?? "",
+                          yPos: YtextField.text ?? "")
     }
     
 }

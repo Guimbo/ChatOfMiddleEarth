@@ -10,7 +10,8 @@ import UIKit
 
 protocol LoginViewPresenting {
     
-    func joinInChat(withUser user: String, andPort port: String)
+    func doLogin(user: String, xPos: String, yPos: String)
+    func showAlert(withMessage message: String)
 }
 
 class LoginViewController: UIViewController {
@@ -47,7 +48,12 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController: LoginViewDelegate {
-    func doLogin(withUser user: String, andPort port: String) {
-        presenter?.joinInChat(withUser: user, andPort: port)
+    func doLogin(user: String, xPos: String, yPos: String) {
+        presenter?.doLogin(user: user, xPos: xPos, yPos: yPos)
     }
+    func showAlert(withMessage message: String) {
+        let alert = UIAlertController.attentionAlert(message: message)
+        present(alert, animated: true, completion: nil)
+    }
+    
 }
