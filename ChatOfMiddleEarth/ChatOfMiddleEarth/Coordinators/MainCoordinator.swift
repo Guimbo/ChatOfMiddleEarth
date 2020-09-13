@@ -47,9 +47,11 @@ final class MainCoordinator: Coordinator {
 
 // MARK: - Login Delegate
 extension MainCoordinator: LoginCoordinating {
-    func showFellowshipScreen(withUser username: String, andportNumber portnumber: String) {
-        openFellowshipScene(username: username, port: portnumber)
+    func showFellowshipScreen(user: String, xPos: String, yPos: String) {
+        #warning("DO RIGHt")
+        //openFellowshipScene(username: username, port: portnumber)
     }
+
 }
 
 // MARK: - Fellowship Delegate

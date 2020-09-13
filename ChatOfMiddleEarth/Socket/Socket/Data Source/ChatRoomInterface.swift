@@ -10,8 +10,10 @@ import Foundation
 
 public protocol ChatRoomInterface {
 
-    func setupNetworkCommunication(inPort portnumber: UInt32)
-    func joinChat(username: String, friend: String)
+    func setupNetworkCommunication()
+    func joinInSpace()
+    func validateUsername(username:String) -> Bool
+    func joinUsingLocation(username: String, xPos: String, yPos: String)
     func send(message: String, toFriend friend: String)
     func stopChatSession()
 

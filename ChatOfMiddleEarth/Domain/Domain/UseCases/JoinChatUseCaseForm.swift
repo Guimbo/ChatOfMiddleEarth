@@ -9,8 +9,9 @@
 import Foundation
 
 public protocol JoinChatUseCaseFormProtocol {
-    func execute(withUser username: String,
-                 andPortNumber portnumber: String,
+    func execute(username: String,
+                 xPos: String,
+                 yPos: String,
                  andCompletion completion: (Result<Void, JoinChatUseCaseFormError>) -> Void)
 }
 
@@ -20,15 +21,18 @@ public class JoinChatUseCaseForm {
 }
 
 extension JoinChatUseCaseForm: JoinChatUseCaseFormProtocol {
-    public func execute(withUser username: String,
-                        andPortNumber portnumber: String,
+
+    public func execute(username: String,
+                        xPos: String,
+                        yPos: String,
                         andCompletion completion: (Result<Void, JoinChatUseCaseFormError>) -> Void) {
         
+        let portnumber = "123"
         guard UInt32(portnumber) != nil else {
             completion(.failure(.portnumber(.invalid)))
             return
         }
-        
+
         if username.isEmpty {
             completion(.failure(.username(.empty)))
         } else if portnumber.isEmpty {

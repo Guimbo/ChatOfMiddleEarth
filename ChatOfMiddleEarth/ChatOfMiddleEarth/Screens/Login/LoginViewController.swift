@@ -9,9 +9,12 @@
 import UIKit
 
 protocol LoginViewPresenting {
-    
+
     func doLogin(user: String, xPos: String, yPos: String)
-    func showAlert(withMessage message: String)
+}
+
+protocol LoginViewControllerDelegate: class {
+    func showAlert(withMessage: String)
 }
 
 class LoginViewController: UIViewController {
@@ -42,8 +45,8 @@ class LoginViewController: UIViewController {
         super.loadView()
         loginView.delegate = self
         self.view = loginView
+        
     }
-
 
 }
 
@@ -51,9 +54,11 @@ extension LoginViewController: LoginViewDelegate {
     func doLogin(user: String, xPos: String, yPos: String) {
         presenter?.doLogin(user: user, xPos: xPos, yPos: yPos)
     }
+}
+extension LoginViewController: LoginViewControllerDelegate {
+
     func showAlert(withMessage message: String) {
         let alert = UIAlertController.attentionAlert(message: message)
         present(alert, animated: true, completion: nil)
     }
-    
 }

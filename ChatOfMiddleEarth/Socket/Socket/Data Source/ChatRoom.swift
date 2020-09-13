@@ -9,9 +9,13 @@
 import Foundation
 import Domain
 
+protocol ChatRoomMessageJoin {
+    func execute()
+}
+
 
 public class ChatRoom: NSObject {
-    
+
     //properties
     private var inputStream: InputStream!
     private var outputStream: OutputStream!
@@ -19,27 +23,30 @@ public class ChatRoom: NSObject {
     private var username: String?
     private var portnumber: UInt32 = 9795
     private let maxReadLength = 4096
-    
+    var currentMessage: Message?
+    //weak var messageDelegate: ChatRoomMessageJoin?
+
+    //Space properties
+    var namesInSpace:[String] = []
+
     public func attachDelegate(delegate: ChatRoomDelegate) {
         self.delegate = delegate
     }
-    
+
 }
 
 extension ChatRoom: ChatRoomInterface {
-    
-    public func setupNetworkCommunication(inPort portnumber: UInt32) {
-        
-        //0 - Atualiza numero da porta
-        self.portnumber = portnumber
+
+    public func setupNetworkCommunication() {
+
         //1 - Configura fluxos de socket não inicializados sem gerenciamento automático de memória
         var readStream: Unmanaged<CFReadStream>?
         var writeStream: Unmanaged<CFWriteStream>?
-        
+
         //2 - Liga os fluxos e os conecta ao socket do host na porta digitada
         //------>Função usa o Allocator para inicializar os streams. Especifica o hostname. a porta. Inicializa os fluxos internamente
         CFStreamCreatePairWithSocketToHost(kCFAllocatorDefault, "localhost" as CFString, portnumber, &readStream, &writeStream)
-          
+
         // permite capturar simultaneamente uma referência retida
         //e gravar uma retenção desequilibrada, para que a memória
         //não vaze mais tarde. Agora você pode usar os fluxos de entrada
@@ -49,19 +56,44 @@ extension ChatRoom: ChatRoomInterface {
         outputStream = writeStream!.takeRetainedValue()
         
         inputStream.delegate = self
-        
+
         //Add streams em um run loop
         inputStream.schedule(in: .current, forMode: .common)
         outputStream.schedule(in: .current, forMode: .common)
-        
+
         //abrir portão de comunicação
         inputStream.open()
         outputStream.open()
     }
-    
-    public func joinChat(username: String, friend: String) {
+
+    public func joinInSpace() {
         //Contrói a mensagem com um chat room protocol
-        let data = "IAM:\(username):\(friend)".data(using: .utf8)!
+        let data = "USER_LIST_NAME".data(using: .utf8)!
+        
+        
+        //Uma maneira conveniente de trabalhar com uma versão de ponteiro insegura de alguns dados dentro dos limites seguros de uma closure.
+        _ = data.withUnsafeBytes {
+          guard let pointer = $0.baseAddress?.assumingMemoryBound(to: UInt8.self) else {
+            print("Error joining chat")
+            return
+          }
+          // Escreve a mensagem limitando os caracteres
+          outputStream.write(pointer, maxLength: data.count)
+        }
+
+    }
+    
+    public func validateUsername(username:String) -> Bool {
+        if namesInSpace.contains(username) {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    public func joinUsingLocation(username: String, xPos: String, yPos: String) {
+        //Contrói a mensagem com um chat room protocol
+        let data = "USER_REGISTER:\(username):\(xPos):\(yPos)".data(using: .utf8)!
         
         //salva o nome para usar no chat depois
         self.username = username
@@ -136,28 +168,51 @@ extension ChatRoom: StreamDelegate {
          }
          
          //Contruct The message Object
-         if let message = processMessageString(buffer: buffer, length: numberOfBytesRead) {
-           //notify interested parties
-           delegate?.received(message: message)
-           print("dentro do delegate")
-           print(message)
+        processMessageString(buffer: buffer, length: numberOfBytesRead)
+        let message = currentMessage
+        if message != nil {
+            //notify interested parties
+            delegate?.received(message: message!)
+            print(message!)
          }
        }
      }
      
-     private func processMessageString(buffer: UnsafeMutablePointer<UInt8>, length: Int) -> Message? {
+     private func processMessageString(buffer: UnsafeMutablePointer<UInt8>, length: Int) {
        //Init String usandi o buffer e o tamanho. Trata o texto como UTF-8, diz pra string liberar o buffer de
        // bytes quando estiver concluída. Depois divide a mensagem para tratat o nome e a mensagem separadamente.
         guard let stringArray = String( bytesNoCopy: buffer, length: length, encoding: .utf8,
-                                   freeWhenDone: true)?.components(separatedBy: ":") else { return nil }
-        guard let name = stringArray.last else { return nil }
-        var message: String = ""
-        message = stringArray[1]
-        guard let destiny = stringArray.last else { return nil }
-       // Descobre se este cliente ou outro enviou a mensagem com base no nome. Em produção usaria-se um token exclusivo.
-       let messageSender: MessageSender = (name == self.username) ? .someoneElse : .ourself
-       
-       //Contrói a mensagem e a retorna.
-       return Message(message: message, messageSender: messageSender, username: name, destiny: destiny)
+                                   freeWhenDone: true)?.components(separatedBy: ":") else { return }
+        print("*************")
+        print(stringArray)
+        print("*************")
+        communicationResponse(response: stringArray)
+        //self.messageDelegate?.execute()
      }
+    
+    func communicationResponse(response: [String] ) {
+        
+        if response.first == "USER_LIST_NAME" && response.count > 1{
+            var arrayOfNames = response
+            arrayOfNames.removeFirst()
+            namesInSpace = arrayOfNames
+        }
+            
+        else if response.first == "SUCCESS" {
+            debugPrint("~~~Ação bem sucedida~~~")
+        }
+        
+        else if response.first == "MSG" {
+            
+            guard let name = response.last else { return }
+             var message: String = ""
+             message = response[1]
+             guard let destiny = response.last else { return }
+            // Descobre se este cliente ou outro enviou a mensagem com base no nome. Em produção usaria-se um token exclusivo.
+            let messageSender: MessageSender = (name == self.username) ? .someoneElse : .ourself
+            
+            //Contrói a mensagem e a retorna.
+            currentMessage = Message(message: message, messageSender: messageSender, username: name, destiny: destiny)
+        }
+    }
 }

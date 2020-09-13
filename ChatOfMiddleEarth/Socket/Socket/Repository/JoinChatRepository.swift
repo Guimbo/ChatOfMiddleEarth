@@ -8,24 +8,35 @@
 
 import Domain
 
+
+
 public class JoinChatRepository {
     private var chatRoom: ChatRoomInterface
     
     public init(chatRoom: ChatRoomInterface) {
         self.chatRoom = chatRoom
+        chatRoom.setupNetworkCommunication()
+        chatRoom.joinInSpace()
     }
 }
 
 extension JoinChatRepository: Domain.JoinChatRepositoryProtocol {
-    public func registerUserInServer(usingUserName username: String,
-                                     andPortNumber portNumber: UInt32,
-                                     toFriend friend: String,
-                                     andCompletion completion: (Result<Void, Error>) -> Void) {
-        chatRoom.setupNetworkCommunication(inPort: portNumber)
-        chatRoom.joinChat(username: username, friend: friend)
-        completion(.success(()))
+    
+    func successResponse() {}
+    
+    
+    public func registerUserInServer(username: String, xPos: String, yPos: String,
+                                     andCompletion completion: (Result<Void, LoginUseCaseError>) -> Void) {
+
+        if chatRoom.validateUsername(username: username) {
+            completion(.failure(.username(.invalid)))
+        }
+        else {
+            chatRoom.joinUsingLocation(username: username, xPos: xPos, yPos: yPos)
+            completion(.success(()))
+            
+        }
         
     }
-    
 
 }
