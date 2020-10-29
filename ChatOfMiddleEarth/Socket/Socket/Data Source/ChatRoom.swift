@@ -67,7 +67,7 @@ extension ChatRoom: ChatRoomInterface {
         self.username = username
         
         //Uma maneira conveniente de trabalhar com uma versão de ponteiro insegura de alguns dados dentro dos limites seguros de uma closure.
-        _ = data.withUnsafeBytes {
+        data.withUnsafeBytes {
           guard let pointer = $0.baseAddress?.assumingMemoryBound(to: UInt8.self) else {
             print("Error joining chat")
             return
@@ -80,7 +80,7 @@ extension ChatRoom: ChatRoomInterface {
     public func send(message: String, toFriend friend: String) {
         let data = "MSG:\(message):\(friend)".data(using: .utf8)!
         
-        _ = data.withUnsafeBytes{
+        data.withUnsafeBytes{
           guard let pointer = $0.baseAddress?.assumingMemoryBound(to: UInt8.self) else {
             print("Error joining chat")
             return
